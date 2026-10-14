@@ -1,0 +1,15 @@
+/* ============================================================
+   Neeglo - Brand webfonts
+   Gnomon* Foreground - the display typeface used for the
+   "Neeglo" wordmark in the logo. Free under the SIL Open Font
+   License (indestructible type*). Self-hosted for parity with
+   the logo, no third-party requests.
+   ============================================================ */
+
+@font-face {
+  font-family: "Gnomon Foreground";
+  src: url("../fonts/gnomon-foreground.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

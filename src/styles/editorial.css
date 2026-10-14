@@ -1,0 +1,711 @@
+/* ============================================================
+   Neeglo - Surfaces & rhythm layer
+   Loaded after components.css so these rules win the cascade.
+   The site keeps its ruled, editorial skeleton but lets content
+   breathe in cards: rounded corners, layered shadows, spaced
+   grids - tidy without becoming generic SaaS chrome.
+   ============================================================ */
+
+/* -- Brand --------------------------------------------------- */
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-tight);
+}
+
+/* -- Icon chrome: no frames, no hover boxes ------------------ */
+.icon-btn {
+  border-color: transparent;
+}
+
+.icon-btn:hover {
+  background: transparent;
+  border-color: transparent;
+  color: var(--c-blue);
+}
+
+.modal__close {
+  border-color: transparent;
+}
+
+/* -- Buttons & inputs: soft corners -------------------------- */
+.btn,
+.field input,
+.field textarea,
+.search-input,
+.form-success {
+  border-radius: var(--radius-sm);
+}
+
+/* -- UK tech weight convention: firm 600 for interactive ------ */
+.btn,
+.btn--outline,
+.btn--link,
+.nav-link,
+.filter-btn {
+  font-weight: var(--fw-semibold);
+}
+
+/* -- Hero ---------------------------------------------------- */
+.hero-badge {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  padding: 0.375rem 0.75rem;
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-highlight);
+}
+
+.hero-badge__text {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.hero-copy {
+  padding-block: clamp(4rem, 8vw, 6.5rem);
+}
+
+.hero-title {
+  font-weight: var(--fw-heading-hero);
+}
+
+/* Trust items: geometric square markers instead of icons */
+.trust-item {
+  gap: 0.5rem;
+}
+
+.trust-item::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--brand-gradient);
+  flex-shrink: 0;
+}
+
+.trust-item svg {
+  display: none;
+}
+
+/* -- Stat / fact numerals use the brand face (see base.css) -- */
+
+/* -- Vertical rhythm ------------------------------------------ */
+.section {
+  padding-block: var(--section-y);
+}
+
+.section-head {
+  margin-bottom: 3rem;
+}
+
+.page-hero {
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.work-head {
+  padding-block: 3rem;
+}
+
+.solution-head {
+  padding-block: 3rem;
+}
+
+.partners {
+  padding-block: 2rem;
+}
+
+.footer-grid {
+  padding-block: 3.5rem;
+}
+
+.contact-form-col {
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+/* -- Card grids ----------------------------------------------- */
+.grid-tiles,
+.team-grid,
+.engagement-grid,
+.notes-grid,
+.incidents,
+.work-grid {
+  gap: 1.5rem;
+  background: transparent;
+  border: 0;
+}
+
+.tile,
+.team-card,
+.note,
+.incident,
+.engagement-cell {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--dur-fast) var(--ease),
+    transform 180ms var(--ease);
+}
+
+.tile:hover,
+.team-card:hover,
+.note:hover,
+.incident:hover,
+.engagement-cell:hover,
+.recent-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.tile {
+  padding: 1.5rem;
+}
+
+/* -- Work cards ----------------------------------------------- */
+.work-grid {
+  padding: 2.5rem var(--gutter) 3rem;
+}
+
+.case-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: box-shadow var(--dur-fast) var(--ease),
+    transform 180ms var(--ease);
+}
+
+.case-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+/* Recent-deployment tiles are links - lift, don't grey */
+.recent-card {
+  color: inherit;
+}
+
+.recent-card:hover {
+  background: transparent;
+}
+
+/* -- Team grid ------------------------------------------------- */
+.team-grid {
+  padding-inline: var(--gutter);
+}
+
+.team-card {
+  overflow: hidden;
+}
+
+.team-card__img {
+  border-bottom: 0;
+}
+
+.team-card:hover .team-card__img img {
+  transform: scale(1.03);
+}
+
+/* Monogram avatar fallback, for co-founders before headshots are in */
+.team-card__img--mono,
+.modal__photo--mono {
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-body);
+  color: var(--c-blue);
+  background:
+    radial-gradient(120% 120% at 100% 0%, rgba(0, 103, 184, 0.08) 0%, transparent 55%),
+    var(--c-surface-alt);
+}
+
+.team-card__img--mono {
+  width: 100%;
+  height: 100%;
+}
+
+/* -- Engagement facts + modal stats ---------------------------- */
+.engagement-grid {
+  margin-top: 2.5rem;
+}
+
+.engagement-cell {
+  padding: 1.25rem;
+}
+
+.modal__stats {
+  gap: 0.75rem;
+  background: transparent;
+  border: 0;
+}
+
+.modal__stat {
+  background: var(--c-surface-alt);
+  border-radius: var(--radius-sm);
+  padding: 0.875rem 1rem;
+}
+
+/* -- Incident log ----------------------------------------------- */
+.incidents {
+  background: transparent;
+  border: 0;
+}
+
+.incident {
+  padding: 1.25rem;
+}
+
+/* -- Work filters: text tabs ----------------------------------- */
+.filter-bar {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  gap: 0;
+  overflow-x: auto;
+}
+
+.filter-btn {
+  height: auto;
+  padding: 0.375rem 0.125rem;
+  margin-right: 1.5rem;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+  color: var(--c-muted);
+}
+
+.filter-btn:hover {
+  background: transparent;
+  color: var(--c-ink);
+}
+
+.filter-btn.is-active {
+  background: transparent;
+  color: var(--c-blue);
+  border-bottom-color: var(--c-blue);
+}
+
+/* -- Ledger tables: rounded, contained ------------------------- */
+.spec-table,
+.ops-table,
+.status-table {
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+/* -- Deliverables list: ruled rows with square markers --------- */
+.deliver-list {
+  border: 0;
+}
+
+.deliver-item:first-child {
+  border-top: 1px solid var(--c-line);
+  margin-top: 1rem;
+}
+
+.deliver-item {
+  padding-inline: 0;
+}
+
+.deliver-item::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  margin-top: 0.55rem;
+  background: var(--brand-gradient);
+}
+
+.deliver-list--artifacts .deliver-item::before {
+  background: transparent;
+  border: 1px solid var(--c-ink);
+}
+
+.deliver-item svg {
+  display: none;
+}
+
+/* -- Solution layout ------------------------------------------- */
+.solution-head__icon {
+  width: auto;
+  height: auto;
+  border: 0;
+  background: transparent;
+  color: var(--c-blue);
+  align-self: start;
+}
+
+.solution-body {
+  gap: 4rem;
+}
+
+/* Breadcrumb: text-only, slashed */
+.breadcrumb {
+  gap: 0;
+}
+
+.breadcrumb > * + *::before {
+  content: "/";
+  margin-inline: 0.5rem;
+  color: var(--c-line-strong);
+}
+
+.breadcrumb svg {
+  display: none;
+}
+
+/* -- Aside cards / reference architectures --------------------- */
+.aside-card,
+.aside-card--white {
+  border: 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem;
+  background: var(--c-surface-alt);
+}
+
+.aside-card--white {
+  background: var(--c-surface);
+}
+
+.ref-arch {
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface);
+  padding: 0.75rem;
+}
+
+.ref-arch__frame {
+  border: 0;
+  border-radius: var(--radius-xs);
+}
+
+.ref-arch__badge span {
+  background: var(--c-surface);
+  border: 0;
+  border-radius: var(--radius-sm);
+}
+
+/* Documentation: ruled inline links */
+.doc-list {
+  gap: 0;
+}
+
+.doc-link {
+  border: 0;
+  height: auto;
+  padding: 0.625rem 0;
+  color: var(--c-ink);
+  justify-content: flex-start;
+  gap: 0.75rem;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.doc-link:first-of-type {
+  border-top: 1px solid var(--c-line);
+}
+
+.doc-link:hover {
+  background: transparent;
+  color: var(--c-blue);
+}
+
+.doc-link svg {
+  display: none;
+}
+
+/* -- Company --------------------------------------------------- */
+.principle {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--c-line);
+  padding: 1rem 0;
+}
+
+.company-img img,
+.contact-aside__img img {
+  border: 0;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+/* -- Contact --------------------------------------------------- */
+.contact-aside__card {
+  background: var(--c-surface);
+  border: 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
+}
+
+.channel {
+  border: 0;
+  background: transparent;
+  height: auto;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--c-line);
+}
+
+.channels {
+  gap: 0;
+}
+
+/* -- Side nav active state: soft chip --------------------------- */
+.side-item:hover,
+.side-item.is-active {
+  border-radius: var(--radius-sm);
+}
+
+/* -- Modal ------------------------------------------------------ */
+.modal {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg-strong);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+}
+
+.modal__head {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+.modal__close:hover {
+  background: transparent;
+  color: var(--c-blue);
+}
+
+.modal__photo {
+  border: 0;
+  border-radius: var(--radius-sm);
+}
+
+.modal__grid,
+.modal__stats {
+  margin-top: 1.5rem;
+}
+
+/* -- 404 -------------------------------------------------------- */
+.notfound__link {
+  border: 0;
+  height: auto;
+  padding: 0.375rem 0;
+  background: transparent;
+  color: var(--c-blue);
+}
+
+.notfound__link:hover {
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* -- Status ------------------------------------------------------ */
+.status-banner {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.status-dot,
+.status-pill::before {
+  border-radius: 0;
+}
+
+.status-pill {
+  border-radius: 0;
+}
+
+/* -- Remaining orphan markers ------------------------------------ */
+.team-card__cta {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.note__title,
+.aside-card__title {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+}
+
+/* -- Wider screens: more air ------------------------------------- */
+@media (min-width: 1280px) {
+  .grid-tiles,
+  .team-grid,
+  .work-grid,
+  .notes-grid {
+    gap: 2rem;
+  }
+
+  .tile {
+    padding: 2rem;
+  }
+
+  .work-grid {
+    padding-block: 3.5rem;
+  }
+
+  .modal__grid {
+    gap: 0;
+  }
+}
+
+/* ============================================================
+   Products page - desktop-app layout
+   The page is presented like a software workspace: a sticky
+   sidebar of product sections and a sticky toolbar above a
+   content pane. Flat white surfaces, solid cards, one gap
+   scale, and a tighter vertical rhythm than the marketing pages.
+   ============================================================ */
+.page-products {
+  background: var(--c-surface);
+  --section-y: clamp(3rem, 5.5vw, 4rem);
+}
+
+/* Hero keeps a single faint wash */
+.page-products .hero-split {
+  background:
+    radial-gradient(120% 80% at 88% 0%, rgba(15, 108, 189, 0.05), transparent 62%),
+    var(--c-surface);
+}
+
+
+
+
+/* -- Landing rhythm ------------------------------------------ */
+.section--intro {
+  padding-inline: var(--gutter);
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.section--intro .section-head {
+  margin-bottom: 0;
+  max-width: 720px;
+}
+
+.section--intro .section-head__desc {
+  max-width: 680px;
+}
+
+.section--intro .hero-actions {
+  margin-top: 0.5rem;
+}
+
+.section--product-peek {
+  padding-inline: 0;
+  padding-block: 0;
+  border-bottom: 0;
+}
+
+.section--product-peek .section-head {
+  padding-inline: var(--gutter);
+  padding-block: clamp(2rem, 4vw, 3rem) 1.5rem;
+  margin-bottom: 0;
+  max-width: 720px;
+}
+
+.section--product-peek .hero-split {
+  padding-inline: var(--gutter);
+  border-bottom: 0;
+}
+
+/* -- Tighter rhythm inside the content ---------------------- */
+.page-products .section-head {
+  margin-bottom: 1.25rem;
+  max-width: 680px;
+}
+
+.page-products .hero-copy {
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.page-products .cta-band {
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+/* Solid cards, one shared surface treatment */
+.page-products .tile,
+.page-products .company-panel,
+.page-products .stat,
+.page-products .founder {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* One gap scale everywhere */
+.page-products .grid-tiles,
+.page-products .company-grid,
+.page-products .stats,
+.page-products .founder-strip {
+  gap: 1.25rem;
+}
+
+.page-products .grid-tiles {
+  background: transparent;
+  border: 0;
+}
+
+/* Products section bands carry no rules - the cards do the work */
+.page-products .section,
+.page-products .stats,
+.page-products .hero-split {
+  border-bottom: 0;
+}
+
+.page-products .company-grid {
+  border-bottom: 0;
+  padding-inline: var(--gutter);
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.page-products .company-panel {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-right: 0;
+}
+
+/* Stats → a row of cards, no top rules */
+.page-products .stat {
+  padding: 1.75rem 1.5rem;
+}
+
+/* Founders → small cards, no top rules */
+.page-products .founder {
+  padding: 1rem 1.25rem;
+}
+
+/* CTA → a plain band to close the page */
+.page-products .cta-band {
+  background: var(--c-surface-alt);
+  border-top: 0;
+  padding-inline: var(--gutter);
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.page-products .cta-band__inner {
+  max-width: 620px;
+}
+
+.page-products .section--alt {
+  background: var(--c-surface-alt);
+  padding-inline: var(--gutter);
+  padding-block: var(--section-y);
+}
+
+/* How-it-works is an ordered list, not a card grid */
+.grid-tiles--steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+

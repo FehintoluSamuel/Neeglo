@@ -1,0 +1,183 @@
+/* ============================================================
+   Neeglo - Design Tokens
+   Typography uses self-hosted OFL variable typefaces:
+     • Roboto          - display + UI / body (matches the
+                         reference template's RobotoDraft look)
+     • JetBrains Mono  - technical metadata, spec labels
+   The Microsoft Segoe UI stack is retained as the fallback layer.
+   ============================================================ */
+
+:root {
+  /* -- 1. Font families ------------------------------------- */
+  --font-display: "Roboto Variable", "Segoe UI", SegoeUI, "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+  --font-body: "Roboto Variable", "Segoe UI", SegoeUI, "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular",
+    Menlo, Consolas, monospace;
+  /* Logo wordmark face (Gnomon* Foreground) - brand accents only */
+  --font-brand: "Gnomon Foreground", "Roboto Variable", "Segoe UI", SegoeUI,
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-base: var(--font-body);
+
+  /* -- 1b. Brand (logo sign-colour) --------------------------
+     --brand-*        the logo mark's blue→cyan sign gradient -
+                      reserved for the mark and non-text accents.
+     --brand-solid-*  the same blue as a flat, accessible control
+                      colour (white text ≥ 4.5:1) for primary
+                      actions. Enterprise controls stay flat. */
+  --brand-from: #0d7ce9;
+  --brand-to: #15cff1;
+  --brand-gradient: linear-gradient(135deg, var(--brand-from) 0%, var(--brand-to) 100%);
+  --brand-solid: #0b6fd6;
+  --brand-solid-hover: #0a5fb0;
+  --brand-solid-active: #084e91;
+
+  /* -- 2. Type ramp -----------------------------------------
+     Matched to top UK tech & fintech sites: a clean modular
+     scale with an emphatic, closely-set display, sections in
+     the 30–40s, a comfortable 17px body and 12px labels.
+     hero 48→72 · section 30→44 · body 17 · label 12 */
+  --fs-hero: clamp(3rem, 2.1rem + 3.6vw, 4.5rem); /* 48px → 72px */
+  --fs-section: clamp(1.875rem, 1.5rem + 1.6vw, 2.75rem); /* 30px → 44px */
+  --fs-subhead: clamp(1.375rem, 1.1rem + 1.1vw, 1.875rem); /* 22px → 30px - split / lead headings (h3) */
+  --fs-title: 1.3125rem; /* 21px - card / sub-section titles */
+  --fs-lead: 1.25rem; /* 20px - lead paragraphs */
+  --fs-body: 1.0625rem; /* 17px - standard paragraphs */
+  --fs-nav: 1rem; /* 16px - navigation, links, legal */
+  --fs-caption: 0.875rem; /* 14px - supporting meta text */
+  --fs-label: 0.75rem; /* 12px - uppercase eyebrow labels */
+
+  /* -- 3. Weight --------------------------------------------
+     Top-UK-tech convention: firm 600 headings set tight, body
+     at 400, 600 for every interactive element, and a 700
+     display for the hero - immediate, confident hierarchy. */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-heading: 600; /* h2–h4 */
+  --fw-heading-hero: 700; /* h1 / display */
+
+  /* -- 4. Line-height --------------------------------------- */
+  --lh-hero: 1.05;
+  --lh-heading: 1.12;
+  --lh-tight: 1.25;
+  --lh-snug: 1.4;
+  --lh-body: 1.6;
+
+  /* -- 5. Tracking ------------------------------------------ */
+  --tracking-hero: -0.025em;
+  --tracking-section: -0.02em;
+  --tracking-title: -0.01em;
+  --tracking-tight: -0.02em;
+  --tracking-label: 0.08em;
+  --tracking-mono: 0.12em;
+  --tracking-body: 0.01em;
+
+  /* -- 6. Space scale (8px base) ----------------------------
+     One rhythm for the whole site - section rhythm, gaps and
+     stacks all resolve from these steps. */
+  --space-3xs: 0.25rem; /* 4 */
+  --space-2xs: 0.5rem; /* 8 */
+  --space-xs: 0.75rem; /* 12 */
+  --space-sm: 1rem; /* 16 */
+  --space-md: 1.5rem; /* 24 */
+  --space-lg: 2rem; /* 32 */
+  --space-xl: 3rem; /* 48 */
+  --space-2xl: 4rem; /* 64 */
+  --space-3xl: 6rem; /* 96 */
+  --section-y: clamp(5rem, 8vw, 7.5rem); /* 80 → 120 */
+
+  /* -- Colour (Microsoft Fluent 2) --------------------------
+     An upgraded Fluent palette: a full brand-blue ramp from a
+     soft wash to a deep pressed state, a warm neutral grey ramp,
+     and semantic status colours. Text/background pairs are held
+     at or above WCAG AA (4.5:1). */
+  /* Brand blue ramp */
+  --c-blue-10: #f3f9fd;
+  --c-blue-20: #e5f1fa;
+  --c-blue-30: #cfe4f7;
+  --c-blue-40: #b3d6f2;
+  --c-blue-50: #92c5ec;
+  --c-blue-70: #115ea3;
+  --c-blue-80: #0e4775;
+  --c-blue: #0f6cbd; /* primary action */
+  --c-blue-hover: #115ea3; /* brand 70 */
+  --c-blue-pressed: #0e4775; /* brand 80 */
+  --c-blue-soft: #eff6fc; /* tinted surface */
+  --c-blue-subtle: #deecf9;
+  --c-on-blue: #ffffff;
+
+  /* Neutral ramp (warm Fluent greys) */
+  --c-ink: #242424;
+  --c-ink-soft: #424242;
+  --c-muted: #616161;
+  --c-line: #e0e0e0;
+  --c-line-strong: #bdbdbd;
+  --c-surface: #ffffff;
+  --c-surface-alt: #fafafa;
+  --c-surface-sunken: #f5f5f5;
+
+  /* Semantic status */
+  --c-success: #0e700e;
+  --c-warning: #bc4b09;
+  --c-danger: #d13438;
+
+  /* Footer (deep neutral anchor - deliberately not pure #000) */
+  --footer-bg: #1f1f1f;
+  --footer-ink: #f5f5f5;
+  --footer-muted: #a8a8a8;
+  --footer-line: rgba(255, 255, 255, 0.1);
+  --footer-chip-bg: rgba(255, 255, 255, 0.06);
+  --footer-chip-bg-hover: rgba(255, 255, 255, 0.12);
+  --footer-accent: #6fb8f2; /* brand blue lifted for a dark surface */
+
+  /* -- Layout ----------------------------------------------- */
+  --container: 1600px;
+  --header-h: 68px;
+  --gutter: clamp(1.5rem, 4vw, 5rem);
+
+  /* -- Radius ------------------------------------------------
+     Small, controllable corners - enough softness to feel
+     crafted, small enough to stay technical. */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* -- Shadow ------------------------------------------------
+     Layered (spread) shadows in the Fluent tradition: tight
+     contact shadow + soft ambient shadow. Kept very light -
+     just enough depth to lift a surface off the page. */
+  --shadow-sm: 0 1px 2px rgba(20, 20, 20, 0.03),
+    0 1px 4px rgba(20, 20, 20, 0.04);
+  --shadow-md: 0 1px 2px rgba(20, 20, 20, 0.04),
+    0 4px 12px rgba(20, 20, 20, 0.05);
+  --shadow-lg: 0 2px 4px rgba(20, 20, 20, 0.05),
+    0 10px 24px rgba(20, 20, 20, 0.07);
+
+  /* -- Glass (frosted chrome) --------------------------------
+     Applied sparingly to fixed chrome - header, nav, modals,
+     hero pills - so content behind shows through a blur. Body
+     content stays solid to protect contrast. */
+  --glass-bg: rgba(255, 255, 255, 0.66);
+  --glass-bg-strong: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --glass-blur: saturate(180%) blur(16px);
+  --glass-shadow: 0 1px 2px rgba(20, 20, 20, 0.04),
+    0 10px 30px rgba(20, 20, 20, 0.09);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+  /* -- Motion ----------------------------------------------- */
+  --dur-fast: 120ms;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+  }
+}

@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Gnomon-Foreground
+font link: http://indestructibletype.com/Gnomon.html
+font author: indestructible type
+font author site: http://indestructibletype.com
+
+
+icon designer: undefined
+icon designer link: undefined
+        
+{"bg":"transparent","slogan":"#141414","icon-gradient-0":"#0D7CE9","icon-gradient-1":"#15CFF1","font":"#000000"}
+      
