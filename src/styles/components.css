@@ -30,7 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 120px;
+    height: 68px;
     padding-inline: var(--gutter);
   }
 
@@ -47,7 +47,8 @@
   transform: translateX(-50%);
   align-items: center;
   gap: 0.5rem;
-  height: 120px;
+  height: 68px;
+  overflow: hidden;
 }
 
 .brand-logo {
@@ -1884,10 +1885,19 @@
 }
 
 @media (min-width: 1024px) {
+  :root {
+    --header-h: 120px;
+  }
+
+  .header-inner {
+    height: 120px;
+  }
+
   .brand {
     position: static;
     transform: none;
     height: 120px;
+    overflow: visible;
   }
 
   .main-nav {
