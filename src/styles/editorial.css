@@ -108,7 +108,7 @@
   padding-block: 3rem;
 }
 
-.solution-head {
+.product-head {
   padding-block: 3rem;
 }
 
@@ -127,7 +127,7 @@
 /* -- Card grids ----------------------------------------------- */
 .grid-tiles,
 .team-grid,
-.engagement-grid,
+.spec-grid,
 .notes-grid,
 .incidents,
 .work-grid {
@@ -140,7 +140,7 @@
 .team-card,
 .note,
 .incident,
-.engagement-cell {
+.spec-cell {
   background: var(--c-surface);
   border: 1px solid var(--c-line);
   border-radius: var(--radius-md);
@@ -153,7 +153,7 @@
 .team-card:hover,
 .note:hover,
 .incident:hover,
-.engagement-cell:hover,
+.spec-cell:hover,
 .recent-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
@@ -229,11 +229,11 @@
 }
 
 /* -- Engagement facts + modal stats ---------------------------- */
-.engagement-grid {
+.spec-grid {
   margin-top: 2.5rem;
 }
 
-.engagement-cell {
+.spec-cell {
   padding: 1.25rem;
 }
 
@@ -298,20 +298,20 @@
 }
 
 /* -- Deliverables list: ruled rows with square markers --------- */
-.deliver-list {
+.detail-list {
   border: 0;
 }
 
-.deliver-item:first-child {
+.detail-item:first-child {
   border-top: 1px solid var(--c-line);
   margin-top: 1rem;
 }
 
-.deliver-item {
+.detail-item {
   padding-inline: 0;
 }
 
-.deliver-item::before {
+.detail-item::before {
   content: "";
   width: 6px;
   height: 6px;
@@ -320,27 +320,346 @@
   background: var(--brand-gradient);
 }
 
-.deliver-list--artifacts .deliver-item::before {
+.detail-list--artifacts .detail-item::before {
   background: transparent;
   border: 1px solid var(--c-ink);
 }
 
-.deliver-item svg {
+.detail-item svg {
   display: none;
 }
 
-/* -- Solution layout ------------------------------------------- */
-.solution-head__icon {
-  width: auto;
-  height: auto;
-  border: 0;
-  background: transparent;
-  color: var(--c-blue);
-  align-self: start;
+/* -- Products layout ------------------------------------------- */
+/* Larger type ramp, scoped to the Products page only. Everything
+   inside <main class="page-products"> picks these up, so the whole
+   page reads a step bigger without touching other pages. */
+.page-products {
+  --fs-section: clamp(2.125rem, 1.6rem + 1.8vw, 3rem); /* 34px → 48px (was 30→44) */
+  --fs-subhead: clamp(1.5rem, 1.2rem + 1.15vw, 2rem); /* 24px → 32px (was 22→30) */
+  --fs-title: 1.4375rem; /* 23px (was 21) */
+  --fs-lead: 1.375rem; /* 22px (was 20) */
+  --fs-body: 1.1875rem; /* 19px (was 17) */
+  --fs-nav: 1.0625rem; /* 17px (was 16) */
+  --fs-caption: 0.9375rem; /* 15px (was 14) */
+  --fs-label: 0.8125rem; /* 13px (was 12) */
 }
 
-.solution-body {
+.product-body {
   gap: 4rem;
+}
+
+/* In-page anchors clear the sticky header (and mobile tab strip). */
+.page-products .product-head[id],
+.page-products .detail-head[id] {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+
+@media (max-width: 1023px) {
+  .page-products .product-head[id],
+  .page-products .detail-head[id] {
+    scroll-margin-top: calc(var(--header-h) + 4.5rem);
+  }
+}
+
+/* Closing CTA sits under the workspace; the layout already rules off. */
+.page-products .cta-band {
+  border-top: 0;
+}
+
+/* ============================================================
+   Products - Home-style glassy workspace skin
+   A blurred photograph sits behind the whole workspace; the
+   side-nav and content panes go transparent and their blocks
+   become edge-stroked glass, so the wash reads straight through.
+   NOTE: overflow uses `clip` (not `hidden`) so the sticky mobile
+   tab strip still sticks to the viewport.
+   ============================================================ */
+.page-products .section--bg,
+.page-products .cta-band--bg {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background-color: var(--c-blue-80);
+}
+
+.page-products .section--bg::before,
+.page-products .cta-band--bg::before {
+  content: "";
+  position: absolute;
+  inset: -3rem;
+  z-index: -1;
+  background-image: var(--section-bg);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  filter: blur(7.6px) brightness(0.68) saturate(1.1);
+  transform: translate3d(0, var(--bg-shift, 0), 0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Panes go transparent so the wash reads through */
+.page-products .side-nav,
+.page-products .product-main,
+.page-products .product-head,
+.page-products .product-body {
+  background: transparent;
+}
+
+.page-products .side-nav,
+.page-products .product-head {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Type on the wash turns light */
+.page-products .side-nav__label,
+.page-products .side-item__desc,
+.page-products .breadcrumb,
+.page-products .breadcrumb > * + *::before,
+.page-products .spec-cell__label,
+.page-products .ref-arch__caption {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.page-products .side-nav__title,
+.page-products .side-nav__foot-title,
+.page-products .side-item__title,
+.page-products .product-head__title,
+.page-products .detail-head,
+.page-products .spec-cell__value,
+.page-products .aside-card__title,
+.page-products .breadcrumb a,
+.page-products .breadcrumb__current {
+  color: #ffffff;
+}
+
+.page-products .product-head__tagline,
+.page-products .product-head__summary,
+.page-products .detail-item span {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Side-nav items become frosted chips */
+.page-products .side-item:hover,
+.page-products .side-item.is-active {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* What you get: light rules + markers */
+.page-products .detail-item {
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+}
+
+.page-products .detail-item:first-child {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+.page-products .detail-item::before {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.page-products .detail-list--artifacts .detail-item::before {
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Spec facts + aside cards: edge-stroked glass */
+.page-products .spec-cell,
+.page-products .aside-card,
+.page-products .aside-card--white {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-lg);
+  box-shadow: none;
+}
+
+.page-products .spec-cell:hover,
+.page-products .aside-card:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+}
+
+/* Steps + under-the-hood become edge-stroked glass cards */
+.page-products .step-grid,
+.page-products .under-grid {
+  gap: 1.5rem;
+  background: transparent;
+  border: 0;
+}
+
+.page-products .step-card,
+.page-products .under-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-lg);
+  box-shadow: none;
+}
+
+.page-products .step-card__title,
+.page-products .under-card__title {
+  color: #ffffff;
+}
+
+.page-products .step-card__num {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.page-products .step-card__text,
+.page-products .under-card__body {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.page-products .under-card__list li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Tech chips, product meta + status pill on the wash */
+.page-products .tech-chip {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.page-products .product-head__eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.page-products .product-head__status {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.page-products .product-head__status::before {
+  background: #ffffff;
+}
+
+.page-products .ref-arch {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.page-products .doc-link {
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+}
+
+.page-products .doc-link:first-of-type {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+.page-products .doc-link:hover {
+  color: #e5f1fa;
+}
+
+.page-products .doc-link__meta {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.page-products .mockup-carousel__dot {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.page-products .mockup-carousel__dot.is-active {
+  background: #ffffff;
+}
+
+/* Buttons: primary keeps brand fill, secondary goes outline */
+.page-products .btn--primary {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 8px 20px rgba(6, 22, 40, 0.32);
+}
+
+.page-products .btn--secondary {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.65);
+  color: #ffffff;
+}
+
+.page-products .btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+/* CTA band copy on the wash */
+.page-products .cta-band--bg h2 {
+  color: #ffffff;
+}
+
+.page-products .cta-band--bg .eyebrow {
+  color: #e5f1fa;
+}
+
+.page-products .cta-band--bg p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Mobile / tablet: capabilities become a sticky, scrollable tab strip so
+   the product content sits right beneath it instead of below a tall list. */
+@media (max-width: 1023px) {
+  .page-products .side-nav {
+    position: sticky;
+    top: var(--header-h);
+    z-index: 40;
+    background: rgba(14, 71, 117, 0.9);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  .page-products .side-nav__head,
+  .page-products .side-nav__foot {
+    display: none;
+  }
+
+  .page-products .side-nav__list {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.625rem var(--gutter);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .page-products .side-nav__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .page-products .side-item {
+    flex: 0 0 auto;
+    width: auto;
+    align-items: center;
+    padding: 0.5rem 0.875rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    white-space: nowrap;
+  }
+
+  .page-products .side-item__desc {
+    display: none;
+  }
+
+  .page-products .side-item:hover,
+  .page-products .side-item.is-active {
+    border-radius: 999px;
+  }
+
+  .page-products .side-item:hover {
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .page-products .side-item.is-active {
+    background: var(--c-blue);
+    border-color: var(--c-blue);
+  }
+
+  .page-products .side-item.is-active .side-item__title {
+    color: var(--c-on-blue);
+  }
+
+  .page-products .product-main {
+    scroll-margin-top: calc(var(--header-h) + 3.75rem);
+  }
 }
 
 /* Breadcrumb: text-only, slashed */
@@ -352,10 +671,6 @@
   content: "/";
   margin-inline: 0.5rem;
   color: var(--c-line-strong);
-}
-
-.breadcrumb svg {
-  display: none;
 }
 
 /* -- Aside cards / reference architectures --------------------- */
@@ -377,17 +692,6 @@
   border-radius: var(--radius-sm);
   background: var(--c-surface);
   padding: 0.75rem;
-}
-
-.ref-arch__frame {
-  border: 0;
-  border-radius: var(--radius-xs);
-}
-
-.ref-arch__badge span {
-  background: var(--c-surface);
-  border: 0;
-  border-radius: var(--radius-sm);
 }
 
 /* Documentation: ruled inline links */

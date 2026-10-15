@@ -5,7 +5,7 @@ import "@fontsource-variable/jetbrains-mono";
 import "./styles/index.css";
 import Layout from "./components/Layout.jsx";
 import Home from "./pages/Home.jsx";
-import Solutions from "./pages/Solutions.jsx";
+import Products from "./pages/Products.jsx";
 import Team from "./pages/Team.jsx";
 import Work from "./pages/Work.jsx";
 import Company from "./pages/Company.jsx";
@@ -17,7 +17,7 @@ import NotFound from "./pages/NotFound.jsx";
 
 const routes = {
   home: Home,
-  solutions: Solutions,
+  products: Products,
   team: Team,
   work: Work,
   company: Company,

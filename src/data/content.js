@@ -49,7 +49,7 @@ export const images = {
 
 export const nav = [
   { id: "home", label: "Home", href: "/index.html" },
-  { id: "solutions", label: "Solutions", href: "/solutions.html" },
+  { id: "products", label: "Products", href: "/products.html" },
   { id: "team", label: "Team", href: "/team.html" },
   { id: "work", label: "Work", href: "/work.html" },
   { id: "company", label: "Company", href: "/company.html" },
@@ -129,27 +129,9 @@ export const stats = [
   },
 ];
 
-export const practices = [
-  {
-    title: "Product Lab",
-    solutionId: "products",
-    desc: "TrendySize is our first product: a digital measurement platform for fashion businesses, with an AI body-measurement service.",
-  },
-  {
-    title: "Product Engineering",
-    solutionId: "engineering",
-    desc: "React, Laravel and FastAPI end to end: auth, APIs, dashboards, and the measurement-link flow.",
-  },
-  {
-    title: "AI Services",
-    solutionId: "ai",
-    desc: "A Python and FastAPI computer-vision service that estimates body measurements from customer photos.",
-  },
-];
-
 export const partners = [
   "Supported by Bincom Dev",
-  "TrendySize pilot · late Oct 2026",
+  "TrendySize pilot · late October 2026",
   "NDPR-aligned data handling",
 ];
 
@@ -431,67 +413,81 @@ export const workFilters = [
   "AI & Analytics",
 ];
 
-export const solutions = [
+export const products = [
   {
-    id: "products",
-    title: "TrendySize",
-    desc: "Digital measurement platform for fashion businesses.",
-    bullets: [
+    id: "trendysize",
+    name: "TrendySize",
+    tagline: "Digital measurement for fashion businesses.",
+    status: "Pilot · late October 2026",
+    category: "Fashion tech",
+    summary:
+      "TrendySize removes the 'what I ordered vs. what I got' problem. Vendors create a profile and share one link; customers submit their measurements without an account, and the result is a searchable record the vendor owns.",
+    features: [
       "Unique, shareable measurement link per vendor",
       "Customer form - measurements, fabric preferences, photo upload",
       "Searchable vendor dashboard with measurement records",
       "AI body-measurement estimator (Python/FastAPI)",
     ],
-    detail:
-      "TrendySize removes the 'what I ordered vs. what I got' problem. Vendors create a profile and share one link; customers submit their measurements without an account, and the result is a searchable record the vendor owns.",
+    steps: [
+      {
+        title: "Share a link",
+        text: "The vendor shares one measurement link - no customer account required.",
+      },
+      {
+        title: "Capture measurements",
+        text: "The customer submits measurements, or uploads a photo for the AI service to estimate.",
+      },
+      {
+        title: "Keep the record",
+        text: "Every submission lands in the vendor's searchable dashboard, owned by the vendor.",
+      },
+    ],
+    tech: ["React", "TypeScript", "Laravel", "Postgres", "FastAPI", "C#"],
+    underTheHood: [
+      {
+        title: "Product engineering",
+        body: "A brief before the code, tests beside it, and a deploy path the whole team can read.",
+        points: [
+          "React + TypeScript front-ends",
+          "Laravel/PHP REST APIs and PostgreSQL",
+          "C# payment services",
+          "GitHub CI/CD, API testing, dashboards",
+        ],
+      },
+      {
+        title: "AI measurement service",
+        body: "A Python and FastAPI computer-vision service that estimates body measurements from customer photos.",
+        points: [
+          "Computer-vision body measurement estimation",
+          "7 structured measurements per record",
+          "Measured against tape measurements before launch",
+          "Plays inside a Laravel + Postgres system",
+        ],
+      },
+    ],
     deliverables: [
       "React web app · Laravel API · Postgres",
       "FastAPI AI measurement service",
       "Pilot begins late October 2026",
     ],
+    facts: [
+      { label: "Status", value: "Pilot · late October 2026" },
+      { label: "Platform", value: "Web + API" },
+      { label: "Data", value: "NDPR-aligned" },
+    ],
+    docs: [
+      { name: "Project documentation", meta: "PDF · 14 pages", href: "/contact.html" },
+      { name: "MVP backend briefing", meta: "PDF · 15 pages", href: "/contact.html" },
+      { name: "Market survey summary", meta: "PDF · in prep", href: "/contact.html" },
+    ],
+    gallery: {
+      title: "How TrendySize works",
+      aspect: "2778 / 1614",
+      caption:
+        "Vendor link → customer form → measurement estimates → searchable record. NDPR-aligned from day one.",
+    },
+    cta: { label: "Join the pilot", href: "/contact.html" },
   },
-  {
-    id: "engineering",
-    title: "Product Engineering",
-    desc: "Full-stack product engineering.",
-    bullets: [
-      "React + TypeScript front-ends",
-      "Laravel/PHP REST APIs and PostgreSQL",
-      "C# payment services",
-      "GitHub CI/CD, API testing, dashboards",
-    ],
-    detail:
-      "The engineering practice behind TrendySize, applied across everything we build. We write the brief before the code, keep tests beside it, and leave a deploy path the whole team can read.",
-    deliverables: [
-      "End-to-end features across the stack",
-      "API briefs and runbooks before code",
-      "Two-week sprints in Jira",
-    ],
-  },
-  {
-    id: "ai",
-    title: "AI Services",
-    desc: "Python and FastAPI services for computer vision.",
-    bullets: [
-      "Computer-vision body measurement estimation",
-      "7 structured measurements per record",
-      "Measured against tape measurements before launch",
-      "Plays inside a Laravel + Postgres system",
-    ],
-    detail:
-      "The AI service that powers TrendySize's measurement capture. It is built with the same care as the rest of the system, and measured before it reaches a customer.",
-    deliverables: [
-      "FastAPI measurement service",
-      "7 structured body measurements",
-      "Evaluation vs manual tape measurement",
-    ],
-  },
-];
-
-export const engagement = [
-  { label: "Pilot begins", value: "late Oct 2026" },
-  { label: "Company", value: "Independent · founded 2026" },
-  { label: "Team", value: "6 co-founders" },
 ];
 
 export const principles = [
@@ -644,12 +640,6 @@ export const labNotes = [
     read: "Design note",
     author: "Uchenna Oji Okoro",
   },
-];
-
-export const documentation = [
-  { name: "TrendySize - Project Documentation", meta: "PDF · 14 pages" },
-  { name: "TrendySize MVP - Backend Briefing", meta: "PDF · 15 pages" },
-  { name: "TrendySize market survey summary", meta: "PDF · in prep" },
 ];
 
 export const statusServices = [

@@ -85,8 +85,8 @@ export default function Home() {
         </div>
 
         <div className="hero-actions" data-reveal>
-          <a className="btn btn--secondary" href="/solutions.html">
-            Explore our solutions
+          <a className="btn btn--secondary" href="/products.html">
+            Explore our products
           </a>
         </div>
       </section>
@@ -120,7 +120,7 @@ export default function Home() {
             </p>
 
             <div className="hero-actions">
-              <a className="btn btn--secondary" href="/solutions.html#products">
+              <a className="btn btn--secondary" href="/products.html#trendysize">
                 See how TrendySize works
               </a>
             </div>

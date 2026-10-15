@@ -6,8 +6,8 @@ const columns = [
   {
     title: "Home",
     links: [
-      { label: "TrendySize", href: "/solutions.html" },
-      { label: "How it works", href: "/solutions.html" },
+      { label: "TrendySize", href: "/products.html" },
+      { label: "How it works", href: "/products.html#how" },
       { label: "Pilot status", href: "/status.html" },
     ],
   },
@@ -30,7 +30,7 @@ const columns = [
   {
     title: "Resources",
     links: [
-      { label: "Documentation", href: "/solutions.html" },
+      { label: "Documentation", href: "/products.html" },
       { label: "Status", href: "/status.html" },
       { label: "Sitemap", href: "/sitemap.xml" },
     ],
