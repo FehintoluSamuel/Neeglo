@@ -23,7 +23,7 @@ export default function Home() {
               The
             </span>
             <span data-reveal style={{ "--reveal-delay": "0.12s" }}>
-              Future ...
+              Future <span aria-hidden="true">...</span>
             </span>
           </h1>
         </div>
@@ -97,10 +97,9 @@ export default function Home() {
       >
         <div className="section-head" data-reveal>
           <div className="eyebrow">One of our products</div>
-          <p className="section-head__desc">A glimpse at what we build.</p>
         </div>
 
-        <div className="hero-split hero-split--peek">
+        <div className="hero-split">
           <div
             className="hero-copy"
             data-reveal="left"
@@ -138,6 +137,8 @@ export default function Home() {
                 className="hero-media__product"
                 src={productJpg}
                 alt="TrendySize interface for capturing garment measurements"
+                loading="lazy"
+                decoding="async"
               />
             </picture>
             <div className="hero-media__badges">
@@ -170,7 +171,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid-tiles">
+        <div className="grid-tiles grid-tiles--four">
           {whyNeeglo.slice(0, 4).map((w, i) => (
             <div
               className="tile"
@@ -198,7 +199,7 @@ export default function Home() {
           </p>
         </div>
 
-        <ol className="grid-tiles grid-tiles--steps">
+        <ol className="grid-tiles grid-tiles--steps grid-tiles--four">
           {process.slice(0, 4).map((s, i) => (
             <li
               className="tile"
@@ -217,7 +218,7 @@ export default function Home() {
       <section
         className="section section--bg"
         id="team"
-        style={{ "--section-bg": `url(${bgDataCenter})` }}
+        style={{ "--section-bg": `url(${bgSystemsIntegration})` }}
       >
         <div className="section-head" data-reveal>
           <div className="eyebrow">The team</div>
@@ -258,7 +259,7 @@ export default function Home() {
 
       <section
         className="cta-band cta-band--bg"
-        style={{ "--section-bg": `url(${bgSystemsIntegration})` }}
+        style={{ "--section-bg": `url(${bgDataCenter})` }}
       >
         <div className="cta-band__inner" data-reveal>
           <div className="eyebrow">Start a conversation</div>

@@ -499,6 +499,11 @@
   line-height: var(--lh-tight);
 }
 
+/* No eyebrow above the title → no leading gap */
+.tile__title:first-child {
+  margin-top: 0;
+}
+
 .tile__desc {
   margin-top: 0.5rem;
   font-size: var(--fs-body);
@@ -1925,6 +1930,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .grid-tiles--four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .hero-copy {
     width: 52%;
   }
@@ -2659,6 +2668,17 @@
   margin-top: 0.125rem;
   font-size: var(--fs-caption);
   color: var(--c-muted);
+}
+
+/* Long roles shouldn't stretch the avatar rows on small screens */
+@media (max-width: 639px) {
+  .founder__role {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 
 .founder__media {
