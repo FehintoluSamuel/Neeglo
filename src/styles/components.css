@@ -633,6 +633,13 @@
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
+@media (max-width: 767px) {
+  .page-banner__sub {
+    font-size: calc(var(--fs-body) * 0.6);
+    font-style: italic;
+  }
+}
+
 /* -- Page hero (sub pages) --------------------------------- */
 .page-hero {
   background: var(--c-surface);

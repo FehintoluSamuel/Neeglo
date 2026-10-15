@@ -398,6 +398,13 @@
   pointer-events: none;
 }
 
+/* The workspace photo behind the product panes is a light image, so it
+   washes out against the dark-blue glassy UI. Deepen just that wash -
+   the closing band uses different art and keeps the shared filter. */
+.page-products .section--bg::before {
+  filter: blur(10px) brightness(0.3) saturate(1.15);
+}
+
 /* Panes go transparent so the wash reads through */
 .page-products .side-nav,
 .page-products .product-main,
