@@ -2,11 +2,7 @@ import { useEffect } from "react";
 
 export default function useReveal() {
   useEffect(() => {
-    const reduce = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (reduce || !("IntersectionObserver" in window)) {
+    if (!("IntersectionObserver" in window)) {
       document
         .querySelectorAll("[data-reveal]")
         .forEach((el) => el.classList.add("is-revealed"));
