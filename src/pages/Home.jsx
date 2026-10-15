@@ -235,7 +235,7 @@ export default function Home() {
               className="founder"
               key={m.id}
               data-reveal
-              style={{ "--reveal-delay": `${(i % 3) * 0.06}s` }}
+              style={{ "--reveal-delay": `${i * 0.05}s` }}
             >
               <div className="founder__media">
                 <img
