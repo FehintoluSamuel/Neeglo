@@ -48,7 +48,7 @@ export const images = {
 };
 
 export const nav = [
-  { id: "products", label: "Products", href: "/index.html" },
+  { id: "home", label: "Home", href: "/index.html" },
   { id: "solutions", label: "Solutions", href: "/solutions.html" },
   { id: "team", label: "Team", href: "/team.html" },
   { id: "work", label: "Work", href: "/work.html" },
@@ -157,11 +157,11 @@ export const team = [
   {
     id: 1,
     name: "Gloria Ibeneme",
-    role: "Technical Project Manager",
+    role: "Technical Product Manager",
     location: "Lagos, Nigeria",
     since: "2026",
-    img: "",
-    bio: "Technical Project Manager and Product Manager with a BSc in Entrepreneurship & Business Management and a PM certificate from Ensign College. Coordinates product planning, timelines and delivery at TrendySize, and hosts ICT CareerTalks on AI and technology careers - covered by the News Agency of Nigeria.",
+    img: "/images/founders_images/Gloria_Ibeneme.webp",
+    bio: "Technical Product Manager with a BSc in Entrepreneurship & Business Management and a PM certificate from Ensign College. Coordinates product planning, timelines and delivery at TrendySize, and hosts ICT CareerTalks on AI and technology careers - covered by the News Agency of Nigeria.",
     focus: "Product planning, project execution, community & events",
     links: {
       github: "",
@@ -171,12 +171,12 @@ export const team = [
   {
     id: 2,
     name: "Uchenna Oji Okoro",
-    role: "UI/UX Designer",
+    role: "Product Designer",
     location: "Abakaliki, Ebonyi State, Nigeria",
     since: "2025",
-    img: "",
-    bio: "UI/UX Designer focused on clean, user-centred product design. Experienced in Figma, user research and prototyping for web and mobile products.",
-    focus: "UI/UX design, Figma, design systems",
+    img: "/images/founders_images/Uchenna_Oji_2.webp",
+    bio: "Product Designer focused on clean, user-centred product design. Experienced in Figma, user research and prototyping for web and mobile products.",
+    focus: "Product design, Figma, design systems",
     links: {
       github: "",
       linkedin: "www.linkedin.com/in/uchenna-oji-okoro-61052a3b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
@@ -185,11 +185,11 @@ export const team = [
   {
     id: 3,
     name: "Okpube Nnaemeka",
-    role: "Frontend Developer",
+    role: "Frontend Engineer",
     location: "Enugu, Nigeria",
     since: "2026",
-    img: "",
-    bio: "Frontend developer building the TrendySize web experience.",
+    img: "/images/founders_images/Okpube_Nnaemeka.webp",
+    bio: "Frontend engineer building the TrendySize web experience.",
     focus: "React, front-end, interfaces",
     links: {
       github: "",
@@ -202,7 +202,7 @@ export const team = [
     role: "Team Lead - Engineer",
     location: "Lagos, Nigeria",
     since: "2026",
-    img: "",
+    img: "/images/founders_images/Fehintolu_Samuel.webp",
     bio: "Software and machine-learning engineer leading the TrendySize engineering build. At DM Holdings he engineered WiKeep, an automated macOS network-recovery tool, and he applies AI to biomedical problems.",
     profile:
       "Abdulraheem Fehintolu Samuel is a software developer and machine-learning engineer with a background in Metallurgical and Materials Engineering. He leads the TrendySize engineering team - owning sprint planning, code review and technical delivery - and personally built the Python computer-vision microservice that extracts body measurements from customer images. At DM Holdings he supports enterprise C# and SQL Server systems, where he engineered an automated macOS network-recovery solution that removed three manual IT interventions per week. He has research experience in computational neuroscience through the ThinkNeuro programme at the University of California, Berkeley, and contributes to disease-detection solutions as part of The Metalysix team.",
@@ -245,11 +245,11 @@ export const team = [
   {
     id: 5,
     name: "Esther Ibitoye",
-    role: "Backend Developer",
+    role: "Backend Engineer",
     location: "Lagos, Nigeria",
     since: "2026",
-    img: "",
-    bio: "Backend developer on TrendySize - Laravel APIs, PostgreSQL schema and auth. A COREN-registered Electrical & Electronic engineer who previously built notification systems and a digital co-operative app at Bytelabs.",
+    img: "/images/founders_images/Ibitoye_Esther.webp",
+    bio: "Backend engineer on TrendySize - Laravel APIs, PostgreSQL schema and auth. A COREN-registered Electrical & Electronic engineer who previously built notification systems and a digital co-operative app at Bytelabs.",
     profile:
       "Esther Ibitoye is a backend developer with an academic background in Electrical and Electronic Engineering (Telecommunications option) and COREN registration. On TrendySize she designs and maintains the Laravel/PHP REST APIs, business logic, authentication and PostgreSQL data layer, and containerised the backend with Docker for a Kubernetes deployment path. She brings a systems-level foundation - API testing, CI/CD and server-side performance - from her previous backend roles.",
     credentials: [
@@ -276,10 +276,10 @@ export const team = [
   {
     id: 6,
     name: "Eunice Akpa",
-    role: "UI/UX Designer",
+    role: "Product Designer",
     location: "Abakaliki, Nigeria",
     since: "2026",
-    img: "",
+    img: "/images/founders_images/Akpa_Eunice.webp",
     bio: "First-class Crop Science graduate and Best Graduating Student (CGPA 4.74/5.00). Works across the TrendySize product with a background in operations, records and customer experience.",
     profile:
       "Eunice Akpa is a first-class graduate of Crop Science (CGPA 4.74/5.00) and a Best Graduating Student in both her faculty and department. She works across the TrendySize product, bringing hands-on experience in operations, records management and customer-facing roles from her work in agro-allied, HR and client-service positions, and is an ALX-trained professional.",
@@ -300,7 +300,7 @@ export const team = [
       "First-class degree with a CGPA of 4.74/5.00",
       "Maintained HR records for a workforce of several thousand people",
     ],
-    focus: "UI/UX design, research, product",
+    focus: "Product design, research, product",
     links: {
       github: "",
       linkedin: "www.linkedin.com/in/eunice-akpa",

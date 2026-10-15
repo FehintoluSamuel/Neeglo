@@ -160,7 +160,7 @@
 }
 
 .tile {
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
 /* -- Work cards ----------------------------------------------- */
@@ -557,19 +557,19 @@
 }
 
 /* ============================================================
-   Products page - desktop-app layout
+   Home page - desktop-app layout
    The page is presented like a software workspace: a sticky
    sidebar of product sections and a sticky toolbar above a
    content pane. Flat white surfaces, solid cards, one gap
    scale, and a tighter vertical rhythm than the marketing pages.
    ============================================================ */
-.page-products {
+.page-home {
   background: var(--c-surface);
-  --section-y: clamp(3rem, 5.5vw, 4rem);
+  --section-y: clamp(1.75rem, 3.5vw, 2.5rem);
 }
 
 /* Hero keeps a single faint wash */
-.page-products .hero-split {
+.page-home .hero-split {
   background:
     radial-gradient(120% 80% at 88% 0%, rgba(15, 108, 189, 0.05), transparent 62%),
     var(--c-surface);
@@ -581,10 +581,10 @@
 /* -- Landing rhythm ------------------------------------------ */
 .section--intro {
   padding-inline: var(--gutter);
-  padding-block: clamp(3rem, 6vw, 4.5rem);
+  padding-block: clamp(1.75rem, 3.5vw, 2.5rem);
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.25rem;
 }
 
 .section--intro .section-head {
@@ -608,7 +608,7 @@
 
 .section--product-peek .section-head {
   padding-inline: var(--gutter);
-  padding-block: clamp(2rem, 4vw, 3rem) 1.5rem;
+  padding-block: clamp(1.5rem, 3vw, 2rem) 1rem;
   margin-bottom: 0;
   max-width: 720px;
 }
@@ -619,24 +619,24 @@
 }
 
 /* -- Tighter rhythm inside the content ---------------------- */
-.page-products .section-head {
-  margin-bottom: 1.25rem;
+.page-home .section-head {
+  margin-bottom: 1rem;
   max-width: 680px;
 }
 
-.page-products .hero-copy {
-  padding-block: clamp(2rem, 4vw, 3rem);
+.page-home .hero-copy {
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
 }
 
-.page-products .cta-band {
-  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+.page-home .cta-band {
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 /* Solid cards, one shared surface treatment */
-.page-products .tile,
-.page-products .company-panel,
-.page-products .stat,
-.page-products .founder {
+.page-home .tile,
+.page-home .company-panel,
+.page-home .stat,
+.page-home .founder {
   background: var(--c-surface);
   border: 1px solid var(--c-line);
   border-radius: var(--radius-md);
@@ -644,62 +644,56 @@
 }
 
 /* One gap scale everywhere */
-.page-products .grid-tiles,
-.page-products .company-grid,
-.page-products .stats,
-.page-products .founder-strip {
-  gap: 1.25rem;
+.page-home .grid-tiles,
+.page-home .company-grid,
+.page-home .stats,
+.page-home .founder-strip {
+  gap: 1rem;
 }
 
-.page-products .grid-tiles {
+.page-home .grid-tiles {
   background: transparent;
   border: 0;
 }
 
-/* Products section bands carry no rules - the cards do the work */
-.page-products .section,
-.page-products .stats,
-.page-products .hero-split {
+/* Home section bands carry no rules - the cards do the work */
+.page-home .section,
+.page-home .stats,
+.page-home .hero-split {
   border-bottom: 0;
 }
 
-.page-products .company-grid {
+.page-home .company-grid {
   border-bottom: 0;
   padding-inline: var(--gutter);
-  padding-block: clamp(2rem, 4vw, 3rem);
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
 }
 
-.page-products .company-panel {
+.page-home .company-panel {
   padding: clamp(1.5rem, 4vw, 2.5rem);
   border-right: 0;
 }
 
 /* Stats → a row of cards, no top rules */
-.page-products .stat {
+.page-home .stat {
   padding: 1.75rem 1.5rem;
 }
 
 /* Founders → small cards, no top rules */
-.page-products .founder {
-  padding: 1rem 1.25rem;
+.page-home .founder {
+  padding: 1rem clamp(0.4rem, 1.5vw, 1.25rem);
 }
 
 /* CTA → a plain band to close the page */
-.page-products .cta-band {
+.page-home .cta-band {
   background: var(--c-surface-alt);
   border-top: 0;
   padding-inline: var(--gutter);
-  padding-block: clamp(2rem, 4vw, 3rem);
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
 }
 
-.page-products .cta-band__inner {
+.page-home .cta-band__inner {
   max-width: 620px;
-}
-
-.page-products .section--alt {
-  background: var(--c-surface-alt);
-  padding-inline: var(--gutter);
-  padding-block: var(--section-y);
 }
 
 /* How-it-works is an ordered list, not a card grid */
@@ -708,4 +702,134 @@
   margin: 0;
   padding: 0;
 }
+
+/* ============================================================
+   Home landing - frosted (glassy) image backgrounds
+   The photograph is blurred into a soft glass wash. Content
+   cards carry no fill - just an edge stroke - so the wash
+   reads straight through them.
+   ============================================================ */
+.page-home .section--bg,
+.page-home .cta-band--bg {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--c-blue-80);
+}
+
+.page-home .section--bg::before,
+.page-home .cta-band--bg::before {
+  content: "";
+  position: absolute;
+  inset: -3rem;
+  z-index: -1;
+  background-image: var(--section-bg);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  filter: blur(7.6px) brightness(0.68) saturate(1.1);
+  transform: translate3d(0, var(--bg-shift, 0), 0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Background blending disabled - sections keep their own wash */
+.page-home .section--bg::after,
+.page-home .cta-band--bg::after {
+  display: none;
+}
+
+/* Banner: keep a clean separator */
+.page-home .page-banner {
+  border-bottom: 1px solid var(--c-line);
+}
+
+.page-home .page-banner__overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+/* Type that sits directly on the wash turns light */
+.page-home .section--bg .section-head .eyebrow,
+.page-home .cta-band--bg .eyebrow {
+  color: #e5f1fa;
+}
+
+.page-home .section--bg .section-head h2,
+.page-home .section--bg .hero-title,
+.page-home .cta-band--bg h2 {
+  color: #ffffff;
+}
+
+.page-home .section--bg .section-head__desc,
+.page-home .section--bg .hero-text,
+.page-home .cta-band--bg p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Let the wash show behind the split hero copy */
+.page-home .section--bg .hero-split {
+  background: transparent;
+}
+
+/* Glass badge reads better as a light chip on the wash */
+.page-home .section--bg .hero-badge {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.page-home .section--bg .hero-badge__text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Cards: no fill, just an edge stroke so the wash shows through */
+.page-home .section--bg .tile,
+.page-home .section--bg .founder {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-lg);
+  box-shadow: none;
+}
+
+.page-home .section--bg .tile:hover,
+.page-home .section--bg .founder:hover {
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.page-home .section--bg .tile__title,
+.page-home .section--bg .founder__name {
+  color: #ffffff;
+}
+
+.page-home .section--bg .tile__desc,
+.page-home .section--bg .founder__role,
+.page-home .section--bg .tile .eyebrow {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Primary CTA keeps the brand fill so it stays unmistakable on
+   any wash, lifted off the image with a soft shadow */
+.page-home .section--bg .btn--primary,
+.page-home .cta-band--bg .btn--primary {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 8px 20px rgba(6, 22, 40, 0.32);
+}
+
+.page-home .section--bg .btn--secondary,
+.page-home .cta-band--bg .btn--secondary {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+.page-home .section--bg .btn--secondary:hover,
+.page-home .cta-band--bg .btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
 

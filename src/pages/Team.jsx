@@ -28,7 +28,7 @@ export default function Team() {
           <h1>Six founders, one company</h1>
           <p className="page-hero__text">
             Neeglo is an independent software company run by the six people who
-            started it - a project manager, two designers and three engineers,
+            started it - a product manager, two designers and three engineers,
             working across Lagos, Abakaliki and Enugu. We build under our own
             name, we write our reasoning down, and each of us owns a piece of
             whatever ships.
@@ -51,7 +51,7 @@ export default function Team() {
       </section>
 
       <section className="company-grid">
-        <div className="company-panel company-panel--alt" data-reveal>
+        <div className="company-panel company-panel--alt" data-reveal="left">
           <div className="eyebrow">The company</div>
           <h2>{companyIntro.title}</h2>
           {companyIntro.paras.map((para) => (
@@ -63,7 +63,7 @@ export default function Team() {
 
         <div
           className="company-panel"
-          data-reveal
+          data-reveal="right"
           style={{ "--reveal-delay": "0.1s" }}
         >
           <div className="eyebrow">At a glance</div>

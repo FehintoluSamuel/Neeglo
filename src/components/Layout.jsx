@@ -1,9 +1,11 @@
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import useReveal from "../hooks/useReveal.js";
+import useParallax from "../hooks/useParallax.js";
 
 export default function Layout({ active, children }) {
   useReveal();
+  useParallax();
 
   return (
     <div className="site">

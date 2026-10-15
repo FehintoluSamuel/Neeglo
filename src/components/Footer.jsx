@@ -4,7 +4,7 @@ import Icon from "./Icon.jsx";
 
 const columns = [
   {
-    title: "Products",
+    title: "Home",
     links: [
       { label: "TrendySize", href: "/solutions.html" },
       { label: "How it works", href: "/solutions.html" },

@@ -24,7 +24,10 @@ export default function Company() {
       </section>
 
       <section className="company-grid">
-        <div className="company-panel company-panel--alt" data-reveal>
+        <div
+          className="company-panel company-panel--alt"
+          data-reveal="left"
+        >
           <h2>Principles</h2>
           <div className="principles">
             {principles.map((p) => (
@@ -38,7 +41,7 @@ export default function Company() {
 
         <div
           className="company-panel"
-          data-reveal
+          data-reveal="right"
           style={{ "--reveal-delay": "0.1s" }}
         >
           <h2>Operating model</h2>
