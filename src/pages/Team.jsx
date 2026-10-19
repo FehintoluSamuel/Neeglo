@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { companyIntro, images, team, teamOrg } from "../data/content.js";
+import { Github, Linkedin } from "../../brand/icons.jsx";
+import Icon from "../components/Icon.jsx";
+import bannerWebp from "../images/Team_images/optimized/team_page_banner.webp";
+import bannerJpg from "../images/Team_images/optimized/team_page_banner.jpg";
 
 const facts = [
   { k: "Co-founders", v: "6" },
   { k: "Cities", v: "3" },
-  { k: "Founded", v: "2026" },
-  { k: "Support", v: "Bincom Dev" },
 ];
+
+const FOCUSABLE =
+  'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 function initials(name) {
   return name
@@ -19,20 +24,79 @@ function initials(name) {
 
 export default function Team() {
   const [member, setMember] = useState(null);
+  const modalRef = useRef(null);
+  const closeRef = useRef(null);
+  const lastFocusedRef = useRef(null);
+
+  function openProfile(m) {
+    lastFocusedRef.current = document.activeElement;
+    setMember(m);
+  }
+
+  function closeProfile() {
+    setMember(null);
+  }
+
+  // Focus management: trap Tab inside the dialog, close on Escape, and
+  // lock background scroll while it is open. Restore focus on close.
+  useEffect(() => {
+    if (!member) return undefined;
+
+    const previouslyFocused = lastFocusedRef.current;
+    closeRef.current?.focus();
+
+    const { overflow } = document.body.style;
+    document.body.style.overflow = "hidden";
+
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeProfile();
+        return;
+      }
+      if (e.key !== "Tab") return;
+
+      const focusables = modalRef.current?.querySelectorAll(FOCUSABLE);
+      if (!focusables || focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = overflow;
+      if (previouslyFocused instanceof HTMLElement) previouslyFocused.focus();
+    };
+  }, [member]);
 
   return (
     <>
-      <section className="page-hero">
-        <div className="page-hero__inner" data-reveal>
-          <div className="eyebrow">Team</div>
-          <h1>Six founders, one company</h1>
-          <p className="page-hero__text">
-            Neeglo is an independent software company run by the six people who
-            started it - a product manager, two designers and three engineers,
-            working across Lagos, Abakaliki and Enugu. We build under our own
-            name, we write our reasoning down, and each of us owns a piece of
-            whatever ships.
-          </p>
+      <section className="page-banner">
+        <picture aria-hidden="true">
+          <source srcSet={bannerWebp} type="image/webp" />
+          <img src={bannerJpg} alt="" />
+        </picture>
+        <div className="page-banner__overlay" aria-hidden="true" />
+        <div className="page-banner__inner">
+          <div className="page-banner__content">
+            <h1 className="page-banner__title">
+              <span data-reveal style={{ "--reveal-delay": "0s" }}>
+                Built
+              </span>
+              <span data-reveal style={{ "--reveal-delay": "0.12s" }}>
+                to last
+              </span>
+            </h1>
+          </div>
         </div>
       </section>
 
@@ -100,26 +164,17 @@ export default function Team() {
       <section className="section section--flush section--alt">
         <div className="team-grid">
           {team.map((m, i) => (
-            <button
-              type="button"
+            <article
               className="team-card"
               key={m.id}
-              onClick={() => setMember(m)}
               data-reveal
               style={{ "--reveal-delay": `${(i % 4) * 0.06}s` }}
             >
               <div className="team-card__img">
                 {m.img ? (
-                  <img
-                    src={m.img}
-                    alt={`${m.name} headshot`}
-                    loading="lazy"
-                  />
+                  <img src={m.img} alt="" aria-hidden="true" loading="lazy" />
                 ) : (
-                  <span
-                    className="team-card__img--mono"
-                    aria-hidden="true"
-                  >
+                  <span className="team-card__img--mono" aria-hidden="true">
                     {initials(m.name)}
                   </span>
                 )}
@@ -130,32 +185,66 @@ export default function Team() {
                 <p className="team-card__bio">{m.bio}</p>
                 <div className="team-card__foot">
                   <span className="team-card__loc">{m.location}</span>
-                  <span className="team-card__cta">Read full profile</span>
+                  <div className="team-card__social">
+                    {m.links.github && (
+                      <a
+                        className="team-card__icon"
+                        href={`https://${m.links.github}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${m.name} on GitHub`}
+                      >
+                        <Icon as={Github} size="sm" />
+                      </a>
+                    )}
+                    {m.links.linkedin && (
+                      <a
+                        className="team-card__icon"
+                        href={`https://${m.links.linkedin}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${m.name} on LinkedIn`}
+                      >
+                        <Icon as={Linkedin} size="sm" />
+                      </a>
+                    )}
+                  </div>
                 </div>
+                <button
+                  type="button"
+                  className="team-card__open"
+                  onClick={() => openProfile(m)}
+                  aria-haspopup="dialog"
+                  aria-label={`Read the full profile of ${m.name}, ${m.role}`}
+                >
+                  <span aria-hidden="true">Read full profile</span>
+                </button>
               </div>
-            </button>
+            </article>
           ))}
         </div>
       </section>
 
       {member && (
-        <div
-          className="modal-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${member.name}, ${member.role}`}
-          onClick={() => setMember(null)}
-        >
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-overlay" onClick={closeProfile}>
+          <div
+            className="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="profile-title"
+            ref={modalRef}
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="modal__head">
-              <div className="modal__title">
+              <div className="modal__title" id="profile-title">
                 {member.name} - {member.role}
               </div>
               <button
                 type="button"
                 className="modal__close"
                 aria-label="Close profile"
-                onClick={() => setMember(null)}
+                ref={closeRef}
+                onClick={closeProfile}
               >
                 Close
               </button>
@@ -183,7 +272,8 @@ export default function Team() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {member.links.github}
+                      <Icon as={Github} size="sm" />
+                      GitHub
                     </a>
                   )}
                   {member.links.linkedin && (
@@ -193,22 +283,23 @@ export default function Team() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {member.links.linkedin}
+                      <Icon as={Linkedin} size="sm" />
+                      LinkedIn
                     </a>
                   )}
                 </div>
               </div>
 
               <div className="modal__main">
-                <div className="modal__name">{member.name}</div>
+                <h2 className="modal__name">{member.name}</h2>
                 <div className="modal__role">{member.role}</div>
                 <p className="modal__bio">{member.profile ?? member.bio}</p>
 
                 {member.credentials && (
                   <div className="modal__block">
-                    <div className="modal__block-label">
+                    <h3 className="modal__block-label">
                       Education & certification
-                    </div>
+                    </h3>
                     <ul className="modal__list">
                       {member.credentials.map((c) => (
                         <li key={c}>{c}</li>
@@ -219,7 +310,7 @@ export default function Team() {
 
                 {member.experience && (
                   <div className="modal__block">
-                    <div className="modal__block-label">Experience</div>
+                    <h3 className="modal__block-label">Experience</h3>
                     <ul className="modal__list">
                       {member.experience.map((e) => (
                         <li key={e}>{e}</li>
@@ -230,7 +321,7 @@ export default function Team() {
 
                 {member.achievements && (
                   <div className="modal__block">
-                    <div className="modal__block-label">Achievements</div>
+                    <h3 className="modal__block-label">Achievements</h3>
                     <ul className="modal__list">
                       {member.achievements.map((a) => (
                         <li key={a}>{a}</li>
@@ -241,7 +332,7 @@ export default function Team() {
 
                 {member.articles && (
                   <div className="modal__block">
-                    <div className="modal__block-label">Writing</div>
+                    <h3 className="modal__block-label">Writing</h3>
                     <div className="modal__links">
                       {member.articles.map((a) => (
                         <a

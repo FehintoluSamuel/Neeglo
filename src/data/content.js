@@ -10,7 +10,6 @@ export const brand = {
   legalName: "Neeglo", // registration details still to add
   tagline: "Build for the long run.",
   descriptor: "An independent software company",
-  support: "Supported by Bincom Dev", // a supporting credit
   founded: 2026,
   companyNumber: "",
   address: {
@@ -36,7 +35,6 @@ export const teamOrg = [
   { k: "Company", v: "Independent · founded 2026" },
   { k: "Team", v: "Six co-founders · three disciplines" },
   { k: "Based", v: "Lagos · Abakaliki · Enugu" },
-  { k: "Support", v: "Bincom Dev" },
   { k: "First product", v: "TrendySize · pilot late Oct 2026" },
 ];
 
@@ -130,7 +128,6 @@ export const stats = [
 ];
 
 export const partners = [
-  "Supported by Bincom Dev",
   "TrendySize pilot · late October 2026",
   "NDPR-aligned data handling",
 ];
@@ -154,14 +151,14 @@ export const team = [
     id: 2,
     name: "Uchenna Oji Okoro",
     role: "Product Designer",
-    location: "Abakaliki, Ebonyi State, Nigeria",
-    since: "2025",
+    location: "Abakaliki, Nigeria",
+    since: "2026",
     img: "/images/founders_images/Uchenna_Oji_2.webp",
     bio: "Product Designer focused on clean, user-centred product design. Experienced in Figma, user research and prototyping for web and mobile products.",
     focus: "Product design, Figma, design systems",
     links: {
       github: "",
-      linkedin: "www.linkedin.com/in/uchenna-oji-okoro-61052a3b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      linkedin: "www.linkedin.com/in/uchenna-oji-okoro-61052a3b7",
     },
   },
   {
@@ -192,7 +189,7 @@ export const team = [
       "B.Eng. Metallurgical & Materials Engineering - Second Class Upper",
       "Data Science - WorldQuant University",
       "Python for AI - Harvard Extension School",
-      "Python Programming (Distinction) - Bincom Development Centre (UK)",
+      "Python Programming (Distinction) - Development Centre (UK)",
     ],
     experience: [
       "Neeglo · TrendySize - Team Lead & Engineer (2026–present)",
@@ -587,7 +584,7 @@ export const process = [
 ];
 
 export const operatingModel = [
-  { k: "Origin", v: "Independent company, founded 2026 · supported by Bincom Dev" },
+  { k: "Origin", v: "Independent company, founded 2026" },
   { k: "Distribution", v: "Remote-first · Lagos, Abakaliki, Enugu, Nigeria" },
   { k: "Launch", v: "TrendySize pilot · late October 2026" },
   { k: "Documented culture", v: "Product docs, API briefs and runbooks before code" },
@@ -597,7 +594,7 @@ export const timeline = [
   {
     year: "Apr 2026",
     title: "We begin",
-    text: "Six founders come together as Neeglo - an independent company, supported by Bincom Dev - to build products of our own.",
+    text: "Six founders come together as Neeglo - an independent company - to build products of our own.",
   },
   {
     year: "May–Jun 2026",

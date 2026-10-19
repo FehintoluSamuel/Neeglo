@@ -198,7 +198,26 @@
 }
 
 .team-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   overflow: hidden;
+}
+
+.team-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.team-card__foot {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
 .team-card__img {
@@ -207,6 +226,65 @@
 
 .team-card:hover .team-card__img img {
   transform: scale(1.03);
+}
+
+/* Full-card affordance: a real button that fills the card so the whole
+   surface opens the profile, without nesting links inside a button. */
+.team-card__open {
+  margin-top: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--fs-nav);
+  font-weight: var(--fw-semibold);
+  color: var(--c-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color var(--dur-fast) var(--ease);
+  text-align: left;
+}
+
+.team-card:hover .team-card__open,
+.team-card__open:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+.team-card__open:focus-visible {
+  outline: 2px solid var(--c-blue);
+  outline-offset: 2px;
+}
+
+/* Social icons sit on the card foot and are their own touch targets. */
+.team-card__social {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.team-card__icon {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-sm);
+  color: var(--c-muted);
+  transition: color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease);
+}
+
+.team-card__icon:hover,
+.team-card__icon:focus-visible {
+  color: var(--c-blue);
+  border-color: var(--c-blue);
+  background: var(--c-surface-alt);
+}
+
+.team-card__icon:focus-visible {
+  outline: 2px solid var(--c-blue);
+  outline-offset: 2px;
 }
 
 /* Monogram avatar fallback, for co-founders before headshots are in */
@@ -834,11 +912,6 @@
 }
 
 /* -- Remaining orphan markers ------------------------------------ */
-.team-card__cta {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
 .note__title,
 .aside-card__title {
   font-family: var(--font-display);
@@ -1086,6 +1159,81 @@
 /* Banner: keep a clean separator */
 .page-home .page-banner {
   border-bottom: 1px solid var(--c-line);
+}
+
+/* Team banner art is top-weighted, so anchor the frame lower and give it
+   a little more height - the default centred crop was clipping heads at
+   the top of the group. */
+.page-team .page-banner {
+  height: clamp(300px, 44vw, 600px);
+}
+
+.page-team .page-banner img {
+  object-position: center 28%;
+}
+
+/* Mobile: tighten the vertical rhythm so the page reads as one dense
+   stack instead of a series of roomy bands. */
+@media (max-width: 639px) {
+  /* The banner's 300px floor eats a third of a phone viewport. Let it
+     scale with width instead. */
+  .page-team .page-banner {
+    height: clamp(180px, 46vw, 260px);
+  }
+
+  .page-team .section {
+    padding-block: 2rem;
+  }
+
+  .page-team .fact {
+    padding: 0.875rem var(--gutter);
+  }
+
+  .page-team .fact__value {
+    font-size: 1.05rem;
+  }
+
+  .page-team .company-panel {
+    padding: 1.25rem var(--gutter);
+  }
+
+  .page-team .ops-table {
+    margin-top: 1rem;
+  }
+
+  .page-team .ops-row {
+    grid-template-columns: 96px 1fr;
+  }
+
+  .page-team .ops-row__key,
+  .page-team .ops-row__val {
+    padding: 0.5rem 0.625rem;
+  }
+
+  .page-team .company-img {
+    margin-top: 1.25rem;
+  }
+
+  .page-team .media-band {
+    height: 200px;
+  }
+
+  .page-team .team-grid {
+    gap: 0.875rem;
+    padding-inline: var(--gutter);
+  }
+
+  .page-team .team-card__body {
+    padding: 1rem;
+  }
+
+  .page-team .team-card__foot {
+    padding-top: 0.75rem;
+  }
+
+  .page-team .team-card__open {
+    margin-top: 0.625rem;
+  }
 }
 
 .page-home .page-banner__overlay {

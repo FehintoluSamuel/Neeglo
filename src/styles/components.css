@@ -670,7 +670,7 @@
 /* -- Media band -------------------------------------------- */
 .media-band {
   position: relative;
-  height: 220px;
+  height: clamp(240px, 30vw, 340px);
   border-bottom: 1px solid var(--c-line);
   overflow: hidden;
 }
@@ -730,7 +730,7 @@
 }
 
 .team-card__img {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   background: var(--c-surface-alt);
   border-bottom: 1px solid var(--c-line);
@@ -771,20 +771,6 @@
   font-size: var(--fs-caption);
   line-height: var(--lh-body);
   color: var(--c-muted);
-}
-
-.team-card__cta {
-  margin-top: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: var(--fs-nav);
-  font-weight: var(--fw-semibold);
-  color: var(--c-blue);
-}
-
-.team-card:hover .team-card__cta {
-  text-decoration: underline;
 }
 
 /* -- Modal -------------------------------------------------- */
@@ -884,8 +870,11 @@
 }
 
 .modal__name {
+  font-family: var(--font-display);
   font-size: var(--fs-title);
   font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-body);
+  color: var(--c-ink);
 }
 
 .modal__role {
@@ -929,6 +918,7 @@
 }
 
 .modal__block-label {
+  font-family: var(--font-display);
   font-size: var(--fs-label);
   font-weight: var(--fw-semibold);
   letter-spacing: var(--tracking-label);
@@ -1678,7 +1668,7 @@
 
 .ops-row {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 120px minmax(0, 1fr);
   font-size: var(--fs-nav);
   border-bottom: 1px solid var(--c-line);
 }
@@ -1700,6 +1690,8 @@
 
 .ops-row__val {
   padding: 0.625rem 0.75rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .company-img {
@@ -2167,10 +2159,6 @@
   .tile {
     padding: 2rem;
   }
-
-  .media-band {
-    height: 280px;
-  }
 }
 
 /* ============================================================
@@ -2271,10 +2259,6 @@
 .team-card__loc {
   font-size: var(--fs-label);
   color: var(--c-muted);
-}
-
-.team-card__foot .team-card__cta {
-  margin-top: 0;
 }
 
 /* -- Solutions extras --------------------------------------- */
@@ -2762,7 +2746,7 @@
   }
 
   .fact-strip {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .notes-grid {

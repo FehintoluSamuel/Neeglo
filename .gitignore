@@ -56,3 +56,7 @@ x2.txt
 /src/images/products_images/*.jpg
 /src/images/Solutions_images/*.jpg
 /src/images/products_images/trendysize/*.png
+/src/images/Team_images/*.jpg
+
+# Local editor/skill scaffolding
+/.opencode/

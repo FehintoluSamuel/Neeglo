@@ -18,7 +18,7 @@ export default function Company() {
             Neeglo is an independent company founded in {brand.founded} and run
             by its six founders. We research, ship, measure and document - and
             we put our names on the work. Our first product, TrendySize, reaches
-            pilot this October. We're supported by Bincom Dev.
+            pilot this October.
           </p>
         </div>
       </section>

@@ -62,8 +62,7 @@ export default function Footer() {
           <div className="footer-col__title">{brand.name}</div>
           <p className="footer-about__text">
             Neeglo is an independent software company building TrendySize -
-            digital measurement for fashion businesses. Supported by Bincom Dev.
-            Founded {brand.founded}.
+            digital measurement for fashion businesses. Founded {brand.founded}.
           </p>
           <div className="footer-social">
             <a
