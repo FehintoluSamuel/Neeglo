@@ -1161,13 +1161,9 @@
   border-bottom: 1px solid var(--c-line);
 }
 
-/* Team banner art is top-weighted, so anchor the frame lower and give it
-   a little more height - the default centred crop was clipping heads at
-   the top of the group. */
-.page-team .page-banner {
-  height: clamp(300px, 44vw, 600px);
-}
-
+/* Team banner art is top-weighted; keep the frame identical to the
+   Home/Products banners and just anchor the crop slightly lower so the
+   group's heads aren't clipped. */
 .page-team .page-banner img {
   object-position: center 28%;
 }
@@ -1175,12 +1171,6 @@
 /* Mobile: tighten the vertical rhythm so the page reads as one dense
    stack instead of a series of roomy bands. */
 @media (max-width: 639px) {
-  /* The banner's 300px floor eats a third of a phone viewport. Let it
-     scale with width instead. */
-  .page-team .page-banner {
-    height: clamp(180px, 46vw, 260px);
-  }
-
   .page-team .section {
     padding-block: 2rem;
   }
