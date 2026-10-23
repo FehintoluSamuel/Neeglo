@@ -40,6 +40,16 @@ const [mockupOne] = productGalleries.trendysize;
 
 const heroSlides = [
   {
+    id: "team",
+    kicker: "Who we are",
+    title: companyIntro.title,
+    cta: "About Neeglo",
+    href: "/company.html",
+    image: heroTeam,
+    layout: "left",
+    tone: "dark",
+  },
+  {
     id: "trendysize",
     kicker: "Our first product",
     title: "Digital measurement for fashion businesses",
@@ -57,16 +67,6 @@ const heroSlides = [
     cta: "Start a project",
     href: "/contact.html",
     image: heroLongRun,
-    layout: "left",
-    tone: "dark",
-  },
-  {
-    id: "team",
-    kicker: "Who we are",
-    title: companyIntro.title,
-    cta: "About Neeglo",
-    href: "/company.html",
-    image: heroTeam,
     layout: "left",
     tone: "dark",
   },

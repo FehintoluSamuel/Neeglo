@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Close, Menu } from "../../brand/icons.jsx";
 import Icon from "./Icon.jsx";
 import { nav } from "../data/content.js";
@@ -83,54 +84,49 @@ export default function Header({ active }) {
         </div>
       </div>
 
-      {mobileOpen && (
-        <>
-          <div
-            className="mobile-nav__scrim"
-            aria-hidden="true"
-            onClick={closeMenu}
-          />
+      {mobileOpen &&
+        createPortal(
+          <>
+            <div
+              className="mobile-nav__scrim"
+              aria-hidden="true"
+              onClick={closeMenu}
+            />
 
-          <nav id="mobile-nav" className="mobile-nav" aria-label="Mobile">
-            <div className="mobile-nav__head">
-              <span className="mobile-nav__label">Menu</span>
-              <button
-                type="button"
-                className="mobile-nav__close"
-                aria-label="Close menu"
+            <nav id="mobile-nav" className="mobile-nav" aria-label="Mobile">
+              <div className="mobile-nav__head">
+                <span className="mobile-nav__label">Menu</span>
+              </div>
+
+              <div className="mobile-nav__links">
+                {nav.map((item) => (
+                  <a
+                    key={item.id}
+                    href={item.href}
+                    className={`mobile-nav__item${
+                      active === item.id ? " is-active" : ""
+                    }`}
+                    aria-current={active === item.id ? "page" : undefined}
+                    onClick={closeMenu}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+
+              <a
+                className="mobile-nav__cta"
+                href="/contact.html"
+                data-cta="header-mobile"
                 onClick={closeMenu}
               >
-                <Icon as={Close} />
-              </button>
-            </div>
-
-            <div className="mobile-nav__links">
-              {nav.map((item) => (
-                <a
-                  key={item.id}
-                  href={item.href}
-                  className={`mobile-nav__item${
-                    active === item.id ? " is-active" : ""
-                  }`}
-                  aria-current={active === item.id ? "page" : undefined}
-                  onClick={closeMenu}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-
-            <a
-              className="mobile-nav__cta"
-              href="/contact.html"
-              data-cta="header-mobile"
-              onClick={closeMenu}
-            >
-              Start a project
-            </a>
-          </nav>
-        </>
-      )}
+                Start a project
+              </a>
+            </nav>
+          </>,
+          document.body
+        )
+      }
     </header>
   );
 }
