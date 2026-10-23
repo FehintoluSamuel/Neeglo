@@ -41,6 +41,7 @@ export default function Company() {
 
         <div
           className="company-panel"
+          id="operating-model"
           data-reveal="right"
           style={{ "--reveal-delay": "0.1s" }}
         >
@@ -90,7 +91,7 @@ export default function Company() {
         </ol>
       </section>
 
-      <section className="section section--alt">
+      <section className="section section--alt" id="field-notes">
         <div className="section-head" data-reveal>
           <h2>Field notes</h2>
           <p className="section-head__desc">
