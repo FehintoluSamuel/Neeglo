@@ -60,3 +60,34 @@ x2.txt
 
 # Local editor/skill scaffolding
 /.opencode/
+node_modules
+.next
+dist
+.env
+node_modules
+> .next
+> dist
+> .env
+
+# ------------------------------------------------------------
+# Additional ignores per cleanup
+# ------------------------------------------------------------
+/mimic/
+/mimic
+team_cv/
+/node_modules/
+*.jpg
+*.jpeg
+*.jpe
+*.png
+*.gif
+*.bmp
+*.tif
+*.tiff
+*.avif
+*.heic
+*.ico
+*.svg
+!**/*.webp
+!public/**/*.webp
+!src/**/*.webp

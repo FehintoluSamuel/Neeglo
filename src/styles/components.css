@@ -670,7 +670,7 @@
 .page-banner {
   position: relative;
   width: 100%;
-  height: clamp(240px, 38vw, 520px);
+  height: clamp(260px, 38vw, 520px);
   overflow: hidden;
   background: var(--c-surface-alt);
   border-bottom: 1px solid var(--c-line);
@@ -751,6 +751,74 @@
     font-size: calc(var(--fs-body) * 0.6);
     font-style: italic;
   }
+}
+
+/* -- Team hero (SATH style) --------------------------------- */
+.team-hero {
+  position: relative;
+  width: 100%;
+  min-height: clamp(460px, 92vw, 720px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .team-hero {
+    min-height: 95svh;
+  }
+}
+
+.team-hero__media {
+  position: absolute;
+  inset: 0;
+}
+
+.team-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.team-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8, 20, 32, 0.82) 0%, rgba(8, 20, 32, 0.55) 55%, rgba(8, 20, 32, 0.35) 100%);
+}
+
+.team-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: clamp(4rem, 12vw, 9rem) var(--gutter);
+}
+
+.team-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 720px;
+  color: #fff;
+}
+
+.team-hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.team-hero__title {
+  font-size: clamp(2.8rem, 8vw, 5.6rem);
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.team-hero__subtitle {
+  font-size: clamp(1.2rem, 2.8vw, 1.8rem);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* -- Page hero (sub pages) --------------------------------- */
@@ -3096,4 +3164,419 @@ a, button, .tile, .team-card, .btn, .case-card {
     transform: none;
     transition: opacity 0.5s ease;
   }
+}
+
+/* ============================================================
+   Team page - SATH-inspired layout (wireframe)
+   Colors from project brand tokens
+   ============================================================ */
+
+.team-sath {
+  position: relative;
+  padding-block: clamp(3rem, 8vw, 6rem);
+  overflow: hidden;
+}
+
+.team-sath__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.team-sath__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-sath__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 20, 32, 0.9) 0%, rgba(8, 20, 32, 0.86) 100%);
+}
+
+.team-sath__container {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 6vw, 3.5rem);
+}
+
+.team-sath--intro {
+  background: linear-gradient(180deg, rgba(8, 20, 32, 0.9) 0%, rgba(8, 20, 32, 0.86) 100%);
+}
+
+.team-sath--intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:   url("../images/products_images/new_images/woman-server-farm-using-laptop-automating-system-diagnostics-using-machine-learning-predictions.webp");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  filter: saturate(0.9);
+}
+
+.team-sath--intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 20, 32, 0.9) 0%, rgba(8, 20, 32, 0.86) 100%);
+}
+
+.team-sath--intro > .team-sath__container {
+  position: relative;
+  z-index: 1;
+}
+
+.team-sath--intro .team-sath__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.team-sath__title {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.team-sath__subtitle {
+  font-size: clamp(1.25rem, 2.6vw, 1.8rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 60ch;
+}
+
+.team-sath__intro-text {
+  display: grid;
+  gap: 1.2rem;
+  max-width: 980px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1rem, 1vw, 1.05rem);
+  line-height: var(--lh-body);
+}
+
+.team-sath--featured {
+  background: linear-gradient(180deg, rgba(8, 20, 32, 0.9) 0%, rgba(8, 20, 32, 0.86) 100%);
+}
+
+.team-sath--featured::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/products_images/new_images/woman-server-farm-using-laptop-automating-system-diagnostics-using-machine-learning-predictions.webp");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  filter: saturate(0.9);
+}
+
+.team-sath--featured::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 20, 32, 0.9) 0%, rgba(8, 20, 32, 0.86) 100%);
+}
+
+.team-sath--featured > .team-sath__container {
+  position: relative;
+  z-index: 1;
+}
+
+.team-sath__featured-card {
+  display: grid;
+  grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 4rem);
+  align-items: center;
+  background: transparent;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.team-sath__featured-media {
+  position: relative;
+  height: 100%;
+  min-height: 420px;
+}
+
+.team-sath__featured-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.team-sath__eyebrow-text {
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.8rem;
+  color: var(--brand);
+}
+
+.team-sath__featured-placeholder {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background: radial-gradient(circle at top, rgba(15, 108, 189, 0.24), rgba(15, 108, 189, 0.12));
+  color: var(--brand-solid);
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.team-sath__featured-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(2rem, 6vw, 4rem);
+  color: #fff;
+}
+
+.team-sath__featured-name {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  letter-spacing: -0.015em;
+}
+
+.team-sath__featured-name strong {
+  font-weight: var(--fw-semibold);
+}
+
+.team-sath__featured-role {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.team-sath__divider {
+  width: 72px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--brand-solid) 0%, var(--brand-to) 100%);
+}
+
+.team-sath__featured-bio {
+  display: grid;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 680px;
+}
+
+.team-sath__meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.team-sath__meta-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(15, 108, 189, 0.2);
+}
+
+.team-sath__meta-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.team-sath__meta-value {
+  font-size: 1.1rem;
+  font-weight: var(--fw-medium);
+  color: #fff;
+}
+
+.team-sath__section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.team-sath__section-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #fff;
+}
+
+.team-sath__section-header p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+}
+
+.team-sath__board-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 2vw, 1.4rem);
+  position: relative;
+}
+
+.team-sath__board-card {
+  grid-column: span 4;
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  background: var(--c-surface);
+  text-align: left;
+  transition: border-color var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+  cursor: pointer;
+}
+
+.team-sath__board-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 40px 80px -60px rgba(15, 108, 189, 0.6);
+  border-color: rgba(15, 108, 189, 0.4);
+}
+
+.team-sath__board-card.is-active {
+  border-color: rgba(15, 108, 189, 0.8);
+  box-shadow: 0 40px 80px -60px rgba(15, 108, 189, 0.7);
+}
+
+.team-sath__board-media {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 30px 60px -40px rgba(15, 108, 189, 0.8);
+}
+
+.team-sath__board-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-sath__board-placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(15, 108, 189, 0.18), rgba(21, 207, 241, 0.12));
+  color: var(--brand-solid);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.16em;
+}
+
+.team-sath__board-info h3 {
+  font-size: 1.2rem;
+}
+
+.team-sath__board-info p {
+  color: var(--c-ink-soft);
+}
+
+.team-sath__org {
+  margin-top: clamp(2rem, 6vw, 4rem);
+}
+
+.team-sath__org-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(2rem, 6vw, 3rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  box-shadow: none;
+  color: #fff;
+}
+
+.team-sath__org-card h3 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.team-sath__org-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.team-sath__org-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.team-sath__org-key {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.team-sath__org-val {
+  font-size: 1.05rem;
+  font-weight: var(--fw-medium);
+  color: #fff;
+}
+
+@media (max-width: 1080px) {
+  .team-sath__featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .team-sath__featured-media {
+    min-height: 320px;
+  }
+
+  .team-sath__board-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 720px) {
+  .team-sath__board-card {
+    grid-column: span 12;
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .team-sath__board-media {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+.team-sath--board {
+  background: linear-gradient(180deg, rgba(8, 20, 32, 0.9) 0%, rgba(8, 20, 32, 0.86) 100%);
+}
+
+.team-sath--board::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/products_images/new_images/woman-server-farm-using-laptop-automating-system-diagnostics-using-machine-learning-predictions.webp");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  filter: saturate(0.9);
+}
+
+.team-sath--board::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 20, 32, 0.9) 0%, rgba(8, 20, 32, 0.86) 100%);
+}
+
+.team-sath--board > .team-sath__container {
+  position: relative;
+  z-index: 1;
 }

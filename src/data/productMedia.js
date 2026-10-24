@@ -1,6 +1,6 @@
-import mockup1 from "../images/products_images/trendysize/mockups/trendysize_mockup_1.jpg";
-import mockup2 from "../images/products_images/trendysize/mockups/trendysize_mockup_2.jpg";
-import mockup3 from "../images/products_images/trendysize/mockups/trendysize_mockup_3.jpg";
+import mockup1 from "../images/products_images/trendysize/mockups/trendysize_mockup_1.webp";
+import mockup2 from "../images/products_images/trendysize/mockups/trendysize_mockup_2.webp";
+import mockup3 from "../images/products_images/trendysize/mockups/trendysize_mockup_3.webp";
 
 // Product screenshots live here (not in content.js) because bundler
 // asset imports can't sit in the plain-data module. Keyed by product id.

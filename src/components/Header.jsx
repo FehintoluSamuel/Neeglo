@@ -45,7 +45,7 @@ export default function Header({ active }) {
       <div className="header-inner">
         <div className="header-left">
           <a className="brand" href="/index.html" aria-label="Neeglo home">
-            <img src="/neeglo-logo.svg" alt="Neeglo" className="brand-logo" />
+            <img src="/neeglo-logo.webp" alt="Neeglo" className="brand-logo" />
           </a>
 
           <nav className="main-nav" aria-label="Primary">

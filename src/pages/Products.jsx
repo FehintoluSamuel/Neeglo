@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { products } from "../data/content.js";
 import { productGalleries } from "../data/productMedia.js";
 import bannerWebp from "../images/Solutions_images/optimized/solutions_banner.webp";
-import bannerJpg from "../images/Solutions_images/optimized/solutions_banner.jpg";
 import bgCollaboration from "../images/Solutions_images/optimized/bg-collaboration.webp";
 import bgAiProject from "../images/Solutions_images/optimized/bg-ai-project.webp";
 
@@ -128,7 +127,7 @@ export default function Products() {
       <section className="page-banner">
         <picture aria-hidden="true">
           <source srcSet={bannerWebp} type="image/webp" />
-          <img src={bannerJpg} alt="" />
+          <img src={bannerWebp} alt="" />
         </picture>
         <div className="page-banner__overlay" aria-hidden="true" />
         <div className="page-banner__inner">
