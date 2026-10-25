@@ -69,7 +69,7 @@ export default function Team() {
               <p className="team-sath__featured-role">{active.role}</p>
               <div className="team-sath__divider" aria-hidden="true" />
               <div className="team-sath__featured-bio">
-                <p>{active.bio}</p>
+                <p>{active.profile ?? active.bio}</p>
                 {active.focus ? <p><strong>Focus:</strong> {active.focus}</p> : null}
               </div>
               <div className="team-sath__meta-grid">
