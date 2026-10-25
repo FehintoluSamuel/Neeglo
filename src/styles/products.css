@@ -1,5 +1,5 @@
 .products-page {
-  --products-overlay: rgba(14, 71, 117, 0.78);
+  --products-overlay: rgba(8, 20, 32, 0.82);
   color: var(--c-ink);
 }
 
@@ -194,7 +194,7 @@
 .products-demo__content {
   width: min(100%, 620px);
   padding: clamp(1.5rem, 4vw, 3rem);
-  background: rgba(14, 71, 117, 0.82);
+  background: rgba(8, 20, 32, 0.82);
 }
 
 .products-demo h2,
@@ -280,7 +280,7 @@
 .products-date__content {
   width: min(100%, 860px);
   padding: clamp(1.5rem, 4vw, 3rem);
-  background: rgba(14, 71, 117, 0.82);
+  background: rgba(8, 20, 32, 0.82);
 }
 
 .products-date__theme {
@@ -306,7 +306,7 @@
   width: min(100%, 760px);
   align-self: center;
   padding: clamp(1.5rem, 4vw, 3rem);
-  background: rgba(14, 71, 117, 0.72);
+  background: rgba(8, 20, 32, 0.72);
   color: var(--c-on-blue);
 }
 
@@ -333,7 +333,7 @@
 .products-video__content {
   width: min(100%, 900px);
   padding: clamp(1rem, 3vw, 2rem);
-  background: rgba(14, 71, 117, 0.72);
+  background: rgba(8, 20, 32, 0.72);
 }
 
 .products-gallery {
@@ -390,7 +390,7 @@
 .products-recap__content {
   width: min(100%, 700px);
   padding: clamp(1.5rem, 4vw, 3rem);
-  background: rgba(14, 71, 117, 0.82);
+  background: rgba(8, 20, 32, 0.82);
 }
 
 .products-recap__content > p:not(.products-eyebrow) {
@@ -508,7 +508,7 @@
 .products-enquiries__content {
   width: min(100%, 760px);
   padding: clamp(1.5rem, 4vw, 3rem);
-  background: rgba(14, 71, 117, 0.82);
+  background: rgba(8, 20, 32, 0.82);
 }
 
 .products-enquiries .products-button {
