@@ -37,7 +37,7 @@ export default function Team() {
           <div className="team-sath__header" data-reveal>
             <h2 className="team-sath__title">About Neeglo</h2>
             <p className="team-sath__subtitle">
-              The Tech Team behind Neeglo — building practical technology for real problems across Africa.
+              The Tech Team behind Neeglo, building practical technology for real problems across Africa.
             </p>
           </div>
           <div className="team-sath__intro-text" data-reveal style={{ "--reveal-delay": "0.08s" }}>

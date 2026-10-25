@@ -157,7 +157,7 @@ const posts = [
   {
     title: "Why Technology Advocacy Matters for National Development",
     excerpt:
-      "Across the world, the nations pulling ahead are not simply adopting technology faster — they are shaping the rules around it.",
+      "Across the world, the nations pulling ahead are not simply adopting technology faster, they are shaping the rules around it.",
     image: "/images/mimic/video-1.webp",
   },
   {
@@ -304,7 +304,7 @@ export default function MimicHome() {
             <p className="mh-text">
               Signal Alliance Technology Holding is an African technology
               company building cloud, consulting and software businesses for
-              organisations across the continent — and beyond.
+              organisations across the continent and beyond.
             </p>
             <a className="mh-btn mh-btn--light" href="#about">
               Learn More

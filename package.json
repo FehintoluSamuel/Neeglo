@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Glenur — multi-page marketing site built to Microsoft Fluent typography standards.",
+  "description": "Glenur - multi-page marketing site built to Microsoft Fluent typography standards.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

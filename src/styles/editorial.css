@@ -1314,4 +1314,29 @@
   border-color: rgba(255, 255, 255, 0.85);
 }
 
+.page-home button,
+.page-home .btn,
+.page-home .mh-btn,
+.page-products button,
+.page-products .btn,
+.page-team button {
+  border-radius: 0;
+}
 
+.page-products .products-hero__dot::before {
+  border-radius: 0;
+}
+
+.page-team .team-sath__featured-name {
+  color: var(--c-blue-30);
+}
+
+.page-team .team-sath__org-card h3,
+.page-team .team-sath__org-key,
+.page-team .team-sath__org-val {
+  color: #fff;
+}
+
+.page-team .team-sath__board-media img {
+  object-position: center top;
+}

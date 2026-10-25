@@ -262,7 +262,7 @@ export const team = [
     img: "/images/founders_images/Akpa_Eunice.webp",
     bio: "First-class Crop Science graduate and Best Graduating Student (CGPA 4.74/5.00). Works across the TrendySize product with a background in operations, records and customer experience.",
     profile:
-      "Eunice Akpa is a first-class graduate of Crop Science (CGPA 4.74/5.00) and a Best Graduating Student in both her faculty and department. She works across the TrendySize product, bringing hands-on experience in operations, records management and customer-facing roles from her work in agro-allied, HR and client-service positions, and is an ALX-trained professional.",
+      "Product Designer with a background in Agriculture and administration, bringing strong research, problem-solving, communication, and organizational skills to the design process. Experienced in UI/UX design, user research, wireframing, prototyping, and responsive interface design. Skilled in using Figma, FigJam, and AI tools to explore ideas and create practical, user-friendly digital experiences. I enjoy understanding people's needs, collaborating with others, and designing solutions that solve real-world problems. Apart from Trendysize, I've worked on GIREAPP, HavenHub.",
     credentials: [
       "B.Agric, Crop Science - First Class (CGPA 4.74/5.00), Alex Ekwueme Federal University",
       "Best Graduating Student - Faculty of Agriculture & Department of Crop Science (2022)",
