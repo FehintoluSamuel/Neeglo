@@ -127,10 +127,7 @@ export default function Products() {
     const showAll = () => {
       targets.forEach((target) => target.classList.add("is-visible"));
     };
-    if (
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-      !("IntersectionObserver" in window)
-    ) {
+    if (!("IntersectionObserver" in window)) {
       showAll();
       return undefined;
     }

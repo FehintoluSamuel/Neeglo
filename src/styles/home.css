@@ -1139,6 +1139,7 @@
 [data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0);
+  will-change: auto;
 }
 
 /* Hero slides animate in when they become the active slide */
@@ -1314,7 +1315,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal],
+  [data-reveal] {
+    transform: none;
+    transition: opacity 0.5s ease;
+  }
+
   .mh-slide__content > * {
     opacity: 1 !important;
     transform: none !important;

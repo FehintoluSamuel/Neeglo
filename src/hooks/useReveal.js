@@ -12,10 +12,9 @@ export default function useReveal() {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          entry.target.classList.toggle(
-            "is-revealed",
-            entry.isIntersecting
-          );
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-revealed");
+          io.unobserve(entry.target);
         });
       },
       { rootMargin: "0px 0px -12% 0px", threshold: 0 }

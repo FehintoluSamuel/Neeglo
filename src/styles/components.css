@@ -3150,6 +3150,7 @@ a, button, .tile, .team-card, .btn, .case-card {
 [data-reveal].is-revealed {
   opacity: 1;
   transform: none;
+  will-change: auto;
 }
 
 /* Reduced motion: keep a subtle reveal, but as a fade with no

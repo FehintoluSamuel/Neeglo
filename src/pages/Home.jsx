@@ -209,10 +209,9 @@ export default function Home() {
     const root = rootRef.current;
     if (!root) return undefined;
 
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const targets = root.querySelectorAll("[data-reveal]");
 
-    if (reduce || !("IntersectionObserver" in window)) {
+    if (!("IntersectionObserver" in window)) {
       targets.forEach((el) => el.classList.add("is-visible"));
       return undefined;
     }

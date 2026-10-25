@@ -588,12 +588,12 @@
 .products-page [data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0);
+  will-change: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .products-page [data-reveal] {
-    opacity: 1;
     transform: none;
-    transition: none;
+    transition: opacity 0.5s ease;
   }
 }
