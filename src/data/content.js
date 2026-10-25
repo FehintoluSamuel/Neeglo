@@ -424,7 +424,7 @@ export const products = [
       "Unique, shareable measurement link per vendor",
       "Customer form - measurements, fabric preferences, photo upload",
       "Searchable vendor dashboard with measurement records",
-      "AI body-measurement estimator (Python/FastAPI)",
+      "Photo-based measurement estimates",
     ],
     steps: [
       {
@@ -433,7 +433,7 @@ export const products = [
       },
       {
         title: "Capture measurements",
-        text: "The customer submits measurements, or uploads a photo for the AI service to estimate.",
+        text: "The customer submits measurements, or uploads a photo for an estimate.",
       },
       {
         title: "Keep the record",
@@ -453,7 +453,7 @@ export const products = [
         ],
       },
       {
-        title: "AI measurement service",
+        title: "Photo measurement service",
         body: "A Python and FastAPI computer-vision service that estimates body measurements from customer photos.",
         points: [
           "Computer-vision body measurement estimation",
@@ -465,7 +465,7 @@ export const products = [
     ],
     deliverables: [
       "React web app · Laravel API · Postgres",
-      "FastAPI AI measurement service",
+      "FastAPI photo measurement service",
       "Pilot begins late October 2026",
     ],
     facts: [
