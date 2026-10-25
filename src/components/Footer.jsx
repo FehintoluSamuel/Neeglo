@@ -85,7 +85,7 @@ export default function Footer() {
             </a>
             <a
               className="footer-social__item"
-              href="mailto:hello@glenur.tech"
+              href="mailto:hello@neeglo.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Email Neeglo"

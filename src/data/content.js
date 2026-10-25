@@ -18,8 +18,8 @@ export const brand = {
     line2: "Lagos · Abakaliki · Enugu, Nigeria",
     country: "Nigeria",
   },
-  email: "hello@glenur.tech", // to move to the neeglo domain
-  emailGeneral: "hello@glenur.tech",
+  email: "hello@neeglo.com",
+  emailGeneral: "hello@neeglo.com",
   responseTime: "within 48 hours",
 };
 
