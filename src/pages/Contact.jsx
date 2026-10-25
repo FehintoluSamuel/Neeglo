@@ -178,15 +178,6 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="office">
-            <div className="office__title">Where we work</div>
-            <p className="office__text">
-              Remote-first across Nigeria
-              <br />
-              Lagos · Abakaliki · Enugu
-            </p>
-          </div>
-
           <div className="contact-aside__img">
             <img
               src={images.heroLab}

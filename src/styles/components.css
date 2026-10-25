@@ -2022,24 +2022,6 @@
   font-size: var(--fs-nav);
 }
 
-.office {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--c-line);
-}
-
-.office__title {
-  font-size: var(--fs-nav);
-  font-weight: var(--fw-semibold);
-}
-
-.office__text {
-  margin-top: 0.5rem;
-  font-size: var(--fs-nav);
-  line-height: var(--lh-body);
-  color: var(--c-muted);
-}
-
 .contact-aside__img {
   margin-top: 1.5rem;
 }
