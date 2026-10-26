@@ -47,12 +47,12 @@ export const images = {
 };
 
 export const nav = [
-  { id: "home", label: "Home", href: "/index.html" },
-  { id: "products", label: "Products", href: "/products.html" },
-  { id: "team", label: "Team", href: "/team.html" },
-  { id: "work", label: "Work", href: "/work.html" },
-  { id: "company", label: "Company", href: "/company.html" },
-  { id: "contact", label: "Contact", href: "/contact.html" },
+  { id: "home", label: "Home", href: "/" },
+  { id: "products", label: "Products", href: "/products" },
+  { id: "team", label: "Team", href: "/team" },
+  { id: "work", label: "Work", href: "/work" },
+  { id: "company", label: "Company", href: "/company" },
+  { id: "contact", label: "Contact", href: "/contact" },
 ];
 
 export const homeProblem = {
@@ -294,19 +294,72 @@ export const caseStudies = [
     title: "WiKeep",
     category: "Developer Tools",
     client: "DM Holdings",
-    region: "macOS · production fleet",
+    region: "macOS · Apple Silicon & Intel",
     year: "2026",
-    duration: "6 weeks",
+    duration: "v1.0.0",
     teamSize: "1 engineer",
-    desc: "macOS network diagnostics and self-recovery desktop app (Rust, Tauri, React). A four-tier recovery mechanism with 60-second health checks restores Wi-Fi and DHCP automatically, with launchd-managed background execution.",
-    impact: "3 manual IT interventions per week eliminated",
-    stack: "Rust · Tauri · React",
-    metric: "Auto-recovered on 3 production Macs",
-    quote:
-      "Each installed Mac has recovered its network automatically since deployment.",
-    attrib: "Fehintolu Samuel · personal project",
+    desc: "WiKeep is a local-first macOS Wi-Fi diagnostic and self-repair utility. It scans networks across bands, monitors the link, recovers crashed radios, reconnects to known networks, and repairs corrupted network configuration files.",
+    impact: "Automatic Wi-Fi recovery and network repair",
+    stack: "Rust · Tauri · React · TypeScript",
+    metric: "5 app screens · no cloud or telemetry",
+    quote: "Keep your connection alive, automatically.",
+    attrib: "WiKeep",
     reviewedBy: "Fehintolu Samuel",
     reviewedOn: "Oct 2026",
+    features: [
+      {
+        title: "Deep Network Repair",
+        text: "Resets corrupted macOS network configuration files, flushes the DNS cache, and offers a reboot so macOS can rebuild the interface mapping.",
+      },
+      {
+        title: "Automatic recovery",
+        text: "When a scan finds no networks, waits five seconds and checks again before power-cycling the radio. A 60-second cooldown prevents repeated recovery attempts. WiKeep also reconnects to known networks when the link drops.",
+      },
+      {
+        title: "Smart network switching",
+        text: "Moves to a stronger known access point when the signal gain reaches 12 dB or connection quality falls below your threshold. Choose a preferred band and block open networks.",
+      },
+      {
+        title: "Corruption Watch",
+        text: "Checks network configuration every two seconds and can identify the process and PID behind a change through an elevated trace. Apple services and WiKeep repairs are allow-listed.",
+      },
+      {
+        title: "Environment Review",
+        text: "Reviews third-party launch agents and daemons, system and kernel extensions, and login items. Network-related software is highlighted for investigation.",
+      },
+      {
+        title: "Wake recovery and keep-alive",
+        text: "Restores the link after a sleep-wake gap and can ping your router, DNS, and the internet on a configurable schedule.",
+      },
+      {
+        title: "Menu bar and notifications",
+        text: "Runs quietly in the menu bar, notifies you about disconnects and IP changes, and can launch when you sign in.",
+      },
+      {
+        title: "Live diagnostics and recovery log",
+        text: "Displays signal, latency, channel, and band charts, while recording scans, repairs, switches, and errors in a local log.",
+      },
+      {
+        title: "Guided tour",
+        text: "A welcome screen explains the app, and a 10-step tour introduces the real controls.",
+      },
+    ],
+    workflow: [
+      {
+        title: "Scan",
+        text: "Reads the Wi-Fi radio and lists nearby networks across available bands.",
+      },
+      {
+        title: "Watch",
+        text: "Monitors the connection, keeps it alive, and records configuration changes.",
+      },
+      {
+        title: "Repair",
+        text: "Restores radio or network configuration when macOS Wi-Fi state breaks.",
+      },
+    ],
+    privacy:
+      "Settings and recovery logs stay on the Mac. WiKeep has no cloud service or telemetry; administrator access is requested through native macOS prompts only when needed.",
   },
   {
     id: 2,
@@ -387,13 +440,13 @@ export const caseStudies = [
     title: "TrendySize AI Measurement Service",
     category: "Fashion Tech",
     client: "Neeglo product",
-    region: "FastAPI · Python",
+    region: "TrendySize · Neeglo",
     year: "2026",
     duration: "In development",
     teamSize: "3 engineers",
-    desc: "Python/FastAPI computer-vision service that analyses customer body photos and returns structured measurements - chest, waist, hip, shoulder, sleeve, neck, height - straight into the vendor's record.",
+    desc: "Computer-vision service that analyses customer body photos and returns structured measurements - chest, waist, hip, shoulder, sleeve, neck, height - straight into the vendor's record.",
     impact: "Photo → 7 structured measurements",
-    stack: "Python · FastAPI · PostgreSQL",
+    stack: "Computer vision · PostgreSQL",
     metric: "7 measurement points per record",
     quote:
       "Core TrendySize service, in development. Meaningful portions ship with the October 2026 pilot.",
@@ -474,9 +527,9 @@ export const products = [
       { label: "Data", value: "NDPR-aligned" },
     ],
     docs: [
-      { name: "Project documentation", meta: "PDF · 14 pages", href: "/contact.html" },
-      { name: "MVP backend briefing", meta: "PDF · 15 pages", href: "/contact.html" },
-      { name: "Market survey summary", meta: "PDF · in prep", href: "/contact.html" },
+      { name: "Project documentation", meta: "PDF · 14 pages", href: "/contact" },
+      { name: "MVP backend briefing", meta: "PDF · 15 pages", href: "/contact" },
+      { name: "Market survey summary", meta: "PDF · in prep", href: "/contact" },
     ],
     gallery: {
       title: "How TrendySize works",
@@ -484,7 +537,7 @@ export const products = [
       caption:
         "Vendor link → customer form → measurement estimates → searchable record. NDPR-aligned from day one.",
     },
-    cta: { label: "Join the pilot", href: "/contact.html" },
+    cta: { label: "Join the pilot", href: "/contact" },
   },
 ];
 

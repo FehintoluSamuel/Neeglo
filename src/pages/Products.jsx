@@ -15,7 +15,7 @@ const heroSlides = [
     kicker: "Neeglo product",
     title: "TrendySize",
     description: "Digital measurement for fashion businesses.",
-    href: "/contact.html",
+    href: "/contact",
     action: "Join the pilot",
     image: dressmakersImage,
     position: "center",
@@ -368,7 +368,7 @@ export default function Products() {
         <div className="products-enquiries__content" data-reveal>
           <p className="products-eyebrow">For enquiries</p>
           <h2>Talk with us about your next order.</h2>
-          <a className="btn btn--primary products-button" href="/contact.html">
+          <a className="btn btn--primary products-button" href="/contact">
             Contact Neeglo
           </a>
         </div>

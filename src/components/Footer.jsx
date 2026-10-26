@@ -6,32 +6,32 @@ const columns = [
   {
     title: "Home",
     links: [
-      { label: "TrendySize", href: "/products.html" },
-      { label: "How it works", href: "/products.html#how" },
-      { label: "Pilot status", href: "/status.html" },
+      { label: "TrendySize", href: "/products" },
+      { label: "How it works", href: "/products#how" },
+      { label: "Pilot status", href: "/status" },
     ],
   },
   {
     title: "Team",
     links: [
-      { label: "Co-founders", href: "/team.html" },
-      { label: "Work & builds", href: "/work.html" },
-      { label: "About us", href: "/company.html" },
+      { label: "Co-founders", href: "/team" },
+      { label: "Work & builds", href: "/work" },
+      { label: "About us", href: "/company" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About", href: "/company.html" },
-      { label: "Field notes", href: "/company.html" },
-      { label: "Contact", href: "/contact.html" },
+      { label: "About", href: "/company" },
+      { label: "Field notes", href: "/company" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Documentation", href: "/products.html" },
-      { label: "Status", href: "/status.html" },
+      { label: "Documentation", href: "/products" },
+      { label: "Status", href: "/status" },
       { label: "Sitemap", href: "/sitemap.xml" },
     ],
   },
@@ -122,13 +122,13 @@ export default function Footer() {
               ? ` · Company No. ${brand.companyNumber}`
               : ""}
           </span>
-          <a className="footer-legal__link" href="/privacy.html">
+          <a className="footer-legal__link" href="/privacy">
             Privacy
           </a>
-          <a className="footer-legal__link" href="/terms.html">
+          <a className="footer-legal__link" href="/terms">
             Terms
           </a>
-          <a className="footer-legal__link" href="/status.html">
+          <a className="footer-legal__link" href="/status">
             Status
           </a>
           <a className="footer-legal__link" href="/sitemap.xml">

@@ -759,6 +759,11 @@
   animation: mh-fade 700ms var(--ease);
 }
 
+.mh-playlist__player > img.mh-playlist__image--icon {
+  object-fit: contain;
+  background: #101820;
+}
+
 .mh-playlist__meta {
   position: absolute;
   inset: auto 0 0 0;
@@ -837,6 +842,11 @@
   aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: 4px;
+}
+
+.mh-playlist__thumb--icon {
+  object-fit: contain;
+  background: #101820;
 }
 
 .mh-playlist__text {

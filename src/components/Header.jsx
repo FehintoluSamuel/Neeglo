@@ -44,7 +44,7 @@ export default function Header({ active }) {
     <header className="site-header">
       <div className="header-inner">
         <div className="header-left">
-          <a className="brand" href="/index.html" aria-label="Neeglo home">
+          <a className="brand" href="/" aria-label="Neeglo home">
             <img src="/neeglo-logo.webp" alt="Neeglo" className="brand-logo" />
           </a>
 
@@ -65,7 +65,7 @@ export default function Header({ active }) {
         <div className="header-actions">
           <a
             className="header-cta"
-            href="/contact.html"
+            href="/contact"
             data-cta="header"
           >
             Start a project
@@ -116,7 +116,7 @@ export default function Header({ active }) {
 
               <a
                 className="mobile-nav__cta"
-                href="/contact.html"
+                href="/contact"
                 data-cta="header-mobile"
                 onClick={closeMenu}
               >

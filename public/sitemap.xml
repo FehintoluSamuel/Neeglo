@@ -6,42 +6,42 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://glenur.tech/products.html</loc>
+    <loc>https://glenur.tech/products</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://glenur.tech/work.html</loc>
+    <loc>https://glenur.tech/work</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://glenur.tech/team.html</loc>
+    <loc>https://glenur.tech/team</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glenur.tech/company.html</loc>
+    <loc>https://glenur.tech/company</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://glenur.tech/contact.html</loc>
+    <loc>https://glenur.tech/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glenur.tech/status.html</loc>
+    <loc>https://glenur.tech/status</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://glenur.tech/privacy.html</loc>
+    <loc>https://glenur.tech/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://glenur.tech/terms.html</loc>
+    <loc>https://glenur.tech/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

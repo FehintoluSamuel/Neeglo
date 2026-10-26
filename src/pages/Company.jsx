@@ -104,7 +104,7 @@ export default function Company() {
           {labNotes.map((n, i) => (
             <a
               className="note"
-              href="/contact.html"
+              href="/contact"
               key={n.title}
               data-reveal
               style={{ "--reveal-delay": `${i * 0.06}s` }}

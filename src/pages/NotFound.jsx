@@ -20,7 +20,7 @@ export default function NotFound() {
           ))}
         </nav>
 
-        <a className="btn btn--primary notfound__home" href="/index.html">
+        <a className="btn btn--primary notfound__home" href="/">
           Back to homepage
         </a>
       </div>

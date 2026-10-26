@@ -1,9 +1,55 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { resolve } from "node:path";
+import { resolve, join } from "node:path";
+import { copyFile, mkdir } from "node:fs/promises";
+
+const cleanRoutes = [
+  "products",
+  "team",
+  "work",
+  "company",
+  "contact",
+  "status",
+  "privacy",
+  "terms",
+];
+
+function cleanPageRoutes() {
+  return {
+    name: "clean-page-routes",
+    configureServer(server) {
+      server.middlewares.use((req, _res, next) => {
+        if (!req.url) return next();
+        const requestUrl = new URL(req.url, "http://localhost");
+        const route = requestUrl.pathname.replace(/^\/|\/$/g, "");
+        if (route.endsWith(".html") && cleanRoutes.includes(route.slice(0, -5))) {
+          _res.statusCode = 302;
+          _res.setHeader("Location", `/${route.slice(0, -5)}${requestUrl.search}`);
+          _res.end();
+          return;
+        }
+        if (cleanRoutes.includes(route)) {
+          requestUrl.pathname = `/${route}.html`;
+          req.url = `${requestUrl.pathname}${requestUrl.search}`;
+        }
+        next();
+      });
+    },
+    async writeBundle(options) {
+      const outputDir = resolve(options.dir ?? "dist");
+      await Promise.all(
+        cleanRoutes.map(async (route) => {
+          const routeDir = join(outputDir, route);
+          await mkdir(routeDir, { recursive: true });
+          await copyFile(join(outputDir, `${route}.html`), join(routeDir, "index.html"));
+        }),
+      );
+    },
+  };
+}
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), cleanPageRoutes()],
   server: {
     host: true,
   },

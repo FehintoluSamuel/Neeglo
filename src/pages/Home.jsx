@@ -11,6 +11,7 @@ import {
   whyNeeglo,
 } from "../data/content.js";
 import { productGalleries } from "../data/productMedia.js";
+import { wikeepIcon, wikeepScreens } from "../data/workMedia.js";
 import productsBannerWebp from "../images/products_images/optimized/products_banner.webp";
 import productHeroWebp from "../images/products_images/optimized/trendysize_product_hero.webp";
 import teamBanner from "../images/Team_images/optimized/team_page_banner.webp";
@@ -44,7 +45,7 @@ const heroSlides = [
     kicker: "Who we are",
     title: companyIntro.title,
     cta: "About Neeglo",
-    href: "/company.html",
+    href: "/company",
     image: heroTeam,
     layout: "left",
     tone: "dark",
@@ -54,7 +55,7 @@ const heroSlides = [
     kicker: "Our first product",
     title: "Digital measurement for fashion businesses",
     cta: "See TrendySize",
-    href: "/products.html#trendysize",
+    href: "/products#trendysize",
     image: mockupOne.src,
     layout: "center",
     tone: "media",
@@ -65,7 +66,7 @@ const heroSlides = [
     kicker: brand.descriptor,
     title: "Build for the long run",
     cta: "Start a project",
-    href: "/contact.html",
+    href: "/contact",
     image: heroLongRun,
     layout: "left",
     tone: "dark",
@@ -75,7 +76,7 @@ const heroSlides = [
     kicker: "What we do",
     title: "Technology built around your next step",
     cta: "Explore our work",
-    href: "/work.html",
+    href: "/work",
     image: heroWhatWeDo,
     layout: "left",
     tone: "dark",
@@ -85,7 +86,7 @@ const heroSlides = [
     kicker: "Our standard",
     title: "Custom software, built around real workflows",
     cta: "See our services",
-    href: "/products.html",
+    href: "/products",
     image: heroStandard,
     layout: "left",
     tone: "dark",
@@ -95,7 +96,7 @@ const heroSlides = [
     kicker: "Our footprint",
     title: "We are an African technology company",
     cta: "Meet the team",
-    href: "/team.html",
+    href: "/team",
     image: heroFootprint,
     layout: "split",
     tone: "dark",
@@ -111,14 +112,17 @@ const stats = [
 
 const countries = ["Lagos", "Abakaliki", "Enugu", "Nigeria"];
 
+const featuredCaseStudies = caseStudies.filter(
+  (item) => item.title === "WiKeep" || item.title.startsWith("TrendySize"),
+);
 const caseStudyShots = [media1, media2, media3, media4, media5, media6];
 const labNoteShots = [media7, media8, media9];
 
 const mediaItems = [
-  ...caseStudies.slice(0, 6).map((c, i) => ({
+  ...featuredCaseStudies.map((c, i) => ({
     title: c.title,
     tag: c.category,
-    image: caseStudyShots[i],
+    image: i === 0 ? wikeepIcon : caseStudyShots[i],
   })),
   ...labNotes.map((n, i) => ({
     title: n.title,
@@ -379,7 +383,7 @@ export default function Home() {
               {companyIntro.title}
             </h2>
             <p className="mh-text">{companyIntro.paras[0]}</p>
-            <a className="mh-btn mh-btn--light" href="/company.html">
+            <a className="mh-btn mh-btn--light" href="/company">
               About Neeglo
             </a>
           </div>
@@ -404,7 +408,7 @@ export default function Home() {
                   <p className="mh-text">{s.d}</p>
                   <a
                     className="mh-btn mh-btn--light"
-                    href="/contact.html"
+                    href="/contact"
                     aria-label={`Discuss ${s.t}`}
                   >
                     Talk to us
@@ -444,7 +448,7 @@ export default function Home() {
                   <p className="mh-text">{s.d}</p>
                   <a
                     className="mh-service__link"
-                    href="/contact.html"
+                    href="/contact"
                     aria-label={`Discuss ${s.t}`}
                   >
                     Talk to us
@@ -476,7 +480,7 @@ export default function Home() {
         style={{ backgroundImage: `url(${bgWork})` }}
       >
         <div className="mh-feature__top" data-reveal>
-          <Counter value={caseStudies.length} label="Case Studies" size="lg" />
+          <Counter value={featuredCaseStudies.length} label="Case Studies" size="lg" />
           <h3 className="mh-feature__sub">
             We work with a growing list of start-ups and established companies
             in the tech industry
@@ -487,13 +491,13 @@ export default function Home() {
             <h2 id="home-work-title" className="mh-heading mh-heading--tight">
               Our Work
             </h2>
-            <a className="mh-btn mh-btn--light" href="/work.html">
+            <a className="mh-btn mh-btn--light" href="/work">
               See all case studies
             </a>
           </div>
           <div className="mh-feature__media" data-reveal>
             <ul className="mh-logo-wall">
-              {caseStudies.map((c) => (
+              {featuredCaseStudies.map((c) => (
                 <li key={c.id} className="mh-logo">
                   {c.title}
                 </li>
@@ -520,7 +524,7 @@ export default function Home() {
             <h2 id="home-product-title" className="mh-heading mh-heading--tight">
               TrendySize
             </h2>
-            <a className="mh-btn mh-btn--light" href="/products.html#trendysize">
+            <a className="mh-btn mh-btn--light" href="/products#trendysize">
               See how it works
             </a>
           </div>
@@ -553,7 +557,7 @@ export default function Home() {
             A clear path from the first conversation to day-one support, with
             you involved at every step.
           </p>
-          <a className="mh-btn mh-btn--light" href="/company.html#operating-model">
+          <a className="mh-btn mh-btn--light" href="/company#operating-model">
             See how we work
           </a>
         </div>
@@ -572,7 +576,7 @@ export default function Home() {
           <p className="mh-text">
             A look at the work, the team and the product in progress.
           </p>
-          <a className="mh-btn mh-btn--light" href="/work.html">
+          <a className="mh-btn mh-btn--light" href="/work">
             View our work
           </a>
         </div>
@@ -589,6 +593,11 @@ export default function Home() {
             <div className="mh-playlist__player">
               <img
                 key={activeMedia}
+                className={
+                  mediaItems[activeMedia].title === "WiKeep"
+                    ? "mh-playlist__image--icon"
+                    : undefined
+                }
                 src={mediaItems[activeMedia].image}
                 alt=""
                 loading="lazy"
@@ -614,7 +623,9 @@ export default function Home() {
                     onClick={() => setActiveMedia(i)}
                   >
                     <img
-                      className="mh-playlist__thumb"
+                      className={`mh-playlist__thumb${
+                        v.title === "WiKeep" ? " mh-playlist__thumb--icon" : ""
+                      }`}
                       src={v.image}
                       alt=""
                       loading="lazy"
@@ -642,7 +653,7 @@ export default function Home() {
           <p className="mh-text">
             What we are testing, learning and building - written down as we go.
           </p>
-          <a className="mh-btn mh-btn--light" href="/company.html#field-notes">
+          <a className="mh-btn mh-btn--light" href="/company#field-notes">
             Browse field notes
           </a>
         </div>
@@ -660,7 +671,7 @@ export default function Home() {
               <p className="mh-post__meta">{p.meta}</p>
               <h3 className="mh-post__title">{p.title}</h3>
               <p className="mh-text">{p.excerpt}</p>
-              <a className="mh-link" href="/company.html#field-notes">
+              <a className="mh-link" href="/company#field-notes">
                 Browse field notes
               </a>
             </article>
@@ -680,7 +691,7 @@ export default function Home() {
           <p className="mh-text">
             We look for people who want to build technology that lasts.
           </p>
-          <a className="mh-btn mh-btn--light" href="/team.html">
+          <a className="mh-btn mh-btn--light" href="/team">
             Meet the team
           </a>
         </div>
@@ -699,7 +710,7 @@ export default function Home() {
             Tell us about your business and where you want to go next. Our team
             will get back to you {brand.responseTime}.
           </p>
-          <a className="mh-btn mh-btn--light" href="/contact.html">
+          <a className="mh-btn mh-btn--light" href="/contact">
             Start a project
           </a>
         </div>
