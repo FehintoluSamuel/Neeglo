@@ -715,6 +715,13 @@
   box-shadow: 0 18px 40px rgba(8, 30, 52, 0.14);
 }
 
+/* One surface per section: the playlist items are the cards. */
+.page-home .mh-videos {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
 .mh-videos__head {
   display: flex;
   align-items: baseline;
@@ -1285,6 +1292,16 @@
   text-transform: none;
 }
 
+/* Keep the logo wall as one panel, not a panel of cards. */
+.page-home .mh-logo-wall .mh-logo {
+  min-height: 0;
+  padding: 0.9rem 0;
+  border: 0;
+  border-top: 1px solid var(--mh-line);
+  border-radius: 0;
+  background: transparent;
+}
+
 /* -- Media tags --------------------------------------------- */
 .mh-video__tag {
   position: absolute;
@@ -1331,11 +1348,14 @@
   }
 
   .mh-slide__content > * {
-    opacity: 1 !important;
+    opacity: 0;
     transform: none !important;
   }
 
-  .mh-slide.is-active .mh-slide__content > *,
+  .mh-slide.is-active .mh-slide__content > * {
+    animation: mh-fade 600ms ease forwards !important;
+  }
+
   .mh-slide.is-active .mh-slide__media,
   .mh-stats::after,
   .mh-businesses::after,
@@ -1766,7 +1786,7 @@
   min-height: 44px;
   padding: 0.8rem 1.3rem;
   border: 1px solid rgba(255, 255, 255, 0.62);
-  border-radius: 6px;
+  border-radius: 0;
   background: transparent;
   color: #fff;
   font-size: 0.9375rem;
@@ -1790,7 +1810,7 @@
 
 .mh-hero__arrow {
   padding: 0.6rem 0.9rem;
-  border-radius: 6px;
+  border-radius: 0;
   background: rgba(0, 0, 0, 0.28);
   font-size: 0.8125rem;
   font-weight: 500;
@@ -1800,7 +1820,7 @@
 
 .mh-carousel-nav__btn {
   padding: 0.55rem 0.9rem;
-  border-radius: 6px;
+  border-radius: 0;
   font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0;

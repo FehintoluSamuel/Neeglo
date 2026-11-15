@@ -25,6 +25,11 @@ export default function useReveal() {
       document
         .querySelectorAll("[data-reveal]:not(.is-revealed)")
         .forEach((el) => {
+          if (el.getBoundingClientRect().top < window.innerHeight) {
+            el.classList.add("is-revealed");
+            io.unobserve(el);
+            return;
+          }
           if (seen.has(el)) return;
           seen.add(el);
           io.observe(el);
@@ -32,6 +37,7 @@ export default function useReveal() {
     };
 
     register();
+    window.addEventListener("pageshow", register);
 
     const mo = new MutationObserver(register);
     mo.observe(document.body, { childList: true, subtree: true });
@@ -39,6 +45,7 @@ export default function useReveal() {
     return () => {
       io.disconnect();
       mo.disconnect();
+      window.removeEventListener("pageshow", register);
     };
   }, []);
 }

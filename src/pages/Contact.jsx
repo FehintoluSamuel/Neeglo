@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { brand, images } from "../data/content.js";
+import contactHero from "../images/Works_images/Background_images/contact-hero.webp";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -60,133 +61,165 @@ export default function Contact() {
   }
 
   return (
-    <div className="contact-grid">
-      <section className="contact-form-col" data-reveal>
-        <div className="eyebrow">Contact</div>
-        <h1>Talk to the team</h1>
-        <p className="contact-form-col__text">
-          Interested in the TrendySize pilot, partnering, or joining the waitlist?
-          You reach a co-founder directly and we reply {brand.responseTime}.
-          Prefer email? {brand.email}
-        </p>
-
-        <form className="contact-form" onSubmit={onSubmit} noValidate>
-          <div className="form-row">
-            <div className="field">
-              <label htmlFor="firstName">First name *</label>
-              <input
-                type="text"
-                autoComplete="given-name"
-                {...fieldProps("firstName")}
-              />
-              {errors.firstName && (
-                <span className="field__error" id="firstName-error">
-                  {errors.firstName}
-                </span>
-              )}
-            </div>
-            <div className="field">
-              <label htmlFor="lastName">Last name *</label>
-              <input
-                type="text"
-                autoComplete="family-name"
-                {...fieldProps("lastName")}
-              />
-              {errors.lastName && (
-                <span className="field__error" id="lastName-error">
-                  {errors.lastName}
-                </span>
-              )}
-            </div>
-          </div>
-
-          <div className="field">
-            <label htmlFor="email">Work email *</label>
-            <input
-              type="email"
-              autoComplete="email"
-              placeholder="you@company.com"
-              {...fieldProps("email")}
-            />
-            {errors.email && (
-              <span className="field__error" id="email-error">
-                {errors.email}
-              </span>
-            )}
-          </div>
-
-          <div className="field">
-            <label htmlFor="company">Company</label>
-            <input type="text" autoComplete="organization" {...fieldProps("company")} />
-          </div>
-
-          <div className="field">
-            <label htmlFor="building">What are you building?</label>
-            <textarea
-              rows={4}
-              placeholder="Pilot, partnership, or something we should read..."
-              {...fieldProps("building")}
-            />
-            <span className="field__hint">
-              The more specific, the faster we can point you to the right
-              co-founder.
-            </span>
-            {errors.building && (
-              <span className="field__error" id="building-error">
-                {errors.building}
-              </span>
-            )}
-          </div>
-
-          <label className="checkbox-row">
-            <input type="checkbox" checked={values.consent} onChange={update("consent")} />
-            <span>
-              I agree to be contacted about Neeglo services. No marketing spam.
-            </span>
-          </label>
-
-          <button className="btn btn--primary" type="submit">
-            Send message
-          </button>
-
-          {sent && (
-            <div className="form-success" role="status">
-              Message queued locally. In production this routes to{" "}
-              {brand.email}
-            </div>
-          )}
-        </form>
-      </section>
-
-      <section
-        className="contact-aside"
-        data-reveal
-        style={{ "--reveal-delay": "0.08s" }}
-      >
-        <div className="contact-aside__card">
-          <div className="contact-aside__title">Direct channels</div>
-
-          <div className="channels">
-            <div className="channel">
-              <span>{brand.email}</span>
-            </div>
-            <div className="channel">
-              <span>TrendySize pilot · late Oct 2026</span>
-            </div>
-            <div className="channel">
-              <span>NDPR-aligned data handling</span>
-            </div>
-          </div>
-
-          <div className="contact-aside__img">
-            <img
-              src={images.heroLab}
-              alt="Neeglo engineering workspace"
-              loading="lazy"
-            />
+    <>
+      <section className="team-hero contact-hero">
+        <div className="team-hero__media">
+          <img src={contactHero} alt="" aria-hidden="true" />
+        </div>
+        <div className="team-hero__overlay" aria-hidden="true" />
+        <div className="team-hero__inner">
+          <div className="team-hero__content">
+            <p className="team-hero__eyebrow">Contact</p>
+            <h1 className="team-hero__title">Talk to the team</h1>
+            <p className="contact-hero__text">
+              Interested in the TrendySize pilot, partnering, or joining the
+              waitlist? Our team reads every message and replies{" "}
+              {brand.responseTime}.
+            </p>
           </div>
         </div>
       </section>
-    </div>
+
+      <section className="team-sath team-sath--contact">
+        <div className="team-sath__container">
+          <div className="contact-grid">
+            <section className="contact-form-col" data-reveal>
+              <p className="team-sath__eyebrow-text">Project enquiry</p>
+              <h2 className="contact-form-col__title">
+                Tell us what you are building
+              </h2>
+              <p className="contact-form-col__text">
+                Share a few details and your note goes straight to our team.
+                Prefer email? {brand.email}
+              </p>
+
+              <form className="contact-form" onSubmit={onSubmit} noValidate>
+                <div className="form-row">
+                  <div className="field">
+                    <label htmlFor="firstName">First name *</label>
+                    <input
+                      type="text"
+                      autoComplete="given-name"
+                      {...fieldProps("firstName")}
+                    />
+                    {errors.firstName && (
+                      <span className="field__error" id="firstName-error">
+                        {errors.firstName}
+                      </span>
+                    )}
+                  </div>
+                  <div className="field">
+                    <label htmlFor="lastName">Last name *</label>
+                    <input
+                      type="text"
+                      autoComplete="family-name"
+                      {...fieldProps("lastName")}
+                    />
+                    {errors.lastName && (
+                      <span className="field__error" id="lastName-error">
+                        {errors.lastName}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="field">
+                  <label htmlFor="email">Work email *</label>
+                  <input
+                    type="email"
+                    autoComplete="email"
+                    placeholder="you@company.com"
+                    {...fieldProps("email")}
+                  />
+                  {errors.email && (
+                    <span className="field__error" id="email-error">
+                      {errors.email}
+                    </span>
+                  )}
+                </div>
+
+                <div className="field">
+                  <label htmlFor="company">Company</label>
+                  <input
+                    type="text"
+                    autoComplete="organization"
+                    {...fieldProps("company")}
+                  />
+                </div>
+
+                <div className="field">
+                  <label htmlFor="building">What are you building?</label>
+                  <textarea
+                    rows={4}
+                    placeholder="Pilot, partnership, or something we should read..."
+                    {...fieldProps("building")}
+                  />
+                  <span className="field__hint">
+                    The more specific, the faster we can route it to the right
+                    person.
+                  </span>
+                  {errors.building && (
+                    <span className="field__error" id="building-error">
+                      {errors.building}
+                    </span>
+                  )}
+                </div>
+
+                <label className="checkbox-row">
+                  <input
+                    type="checkbox"
+                    checked={values.consent}
+                    onChange={update("consent")}
+                  />
+                  <span>
+                    I agree to be contacted about Neeglo services. No marketing
+                    spam.
+                  </span>
+                </label>
+
+                <button className="btn btn--primary" type="submit">
+                  Send message
+                </button>
+
+                {sent && (
+                  <div className="form-success" role="status">
+                    Message queued locally. In production this routes to{" "}
+                    {brand.email}
+                  </div>
+                )}
+              </form>
+            </section>
+
+            <section
+              className="contact-aside"
+              data-reveal
+              style={{ "--reveal-delay": "0.08s" }}
+            >
+              <div className="contact-aside__title">Contact channels</div>
+
+              <div className="channels">
+                <a className="channel" href={`mailto:${brand.email}`}>
+                  <span>{brand.email}</span>
+                </a>
+                <div className="channel">
+                  <span>TrendySize pilot · late Oct 2026</span>
+                </div>
+                <div className="channel">
+                  <span>NDPR-aligned data handling</span>
+                </div>
+              </div>
+
+              <div className="contact-aside__img">
+                <img
+                  src={images.heroLab}
+                  alt="Neeglo engineering workspace"
+                  loading="lazy"
+                />
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { caseStudies, images } from "../data/content.js";
+import { productGalleries } from "../data/productMedia.js";
 import {
   trendySizeWorkLogo,
   wikeepIcon,
   wikeepScreens,
 } from "../data/workMedia.js";
+import workHeroImg from "../images/Works_images/Background_images/work-hero-engineering.webp";
+
+const trendySizeModalShot = productGalleries.trendysize[2];
 
 export default function Work() {
   const [filter, setFilter] = useState("All");
@@ -21,34 +25,42 @@ export default function Work() {
 
   return (
     <>
-      <section className="work-head">
-        <div className="work-head__row" data-reveal>
-          <div>
-            <div className="eyebrow">Work</div>
-            <h1>Selected builds</h1>
-            <p className="work-head__text">
+      <section className="team-hero work-hero">
+        <div className="team-hero__media">
+          <img src={workHeroImg} alt="" aria-hidden="true" />
+        </div>
+        <div className="team-hero__overlay" aria-hidden="true" />
+        <div className="team-hero__inner">
+          <div className="team-hero__content work-hero__content" data-reveal>
+            <p className="team-hero__eyebrow">Work</p>
+            <h1 className="team-hero__title">Selected builds</h1>
+            <p className="work-hero__text">
               A selection of projects the team has built independently. These are not Neeglo client engagements - they are founders' personal projects. Neeglo's focus now is TrendySize, our own product.
             </p>
-          </div>
-
-          <div className="filter-bar" role="tablist" aria-label="Filter work">
-            {filters.map((f) => (
-              <button
-                type="button"
-                key={f}
-                role="tab"
-                aria-selected={filter === f}
-                className={`filter-btn${filter === f ? " is-active" : ""}`}
-                onClick={() => setFilter(f)}
-              >
-                {f}
-              </button>
-            ))}
           </div>
         </div>
       </section>
 
-      <section className="work-grid" aria-live="polite">
+      <section className="team-sath team-sath--work">
+        <div className="team-sath__container">
+          <div className="work-stage__bar" data-reveal>
+            <div className="filter-bar" role="tablist" aria-label="Filter work">
+              {filters.map((f) => (
+                <button
+                  type="button"
+                  key={f}
+                  role="tab"
+                  aria-selected={filter === f}
+                  className={`filter-btn${filter === f ? " is-active" : ""}`}
+                  onClick={() => setFilter(f)}
+                >
+                  {f}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="work-grid" aria-live="polite">
         {visible.map((c, i) => {
           const isWiKeep = c.title === "WiKeep";
           const isTrendySize = c.title.startsWith("TrendySize");
@@ -112,6 +124,8 @@ export default function Work() {
             </article>
           );
         })}
+          </div>
+        </div>
       </section>
 
       {open && (
@@ -142,8 +156,20 @@ export default function Work() {
 
             <div className="case-modal__media">
               <img
-                src={open.title === "WiKeep" ? wikeepIcon : images.dataCenter}
-                alt={open.title === "WiKeep" ? "WiKeep app icon" : `${open.title} infrastructure`}
+                src={
+                  open.title === "WiKeep"
+                    ? wikeepIcon
+                    : open.title.startsWith("TrendySize")
+                      ? trendySizeModalShot.src
+                      : images.dataCenter
+                }
+                alt={
+                  open.title === "WiKeep"
+                    ? "WiKeep app icon"
+                    : open.title.startsWith("TrendySize")
+                      ? trendySizeModalShot.alt
+                      : `${open.title} infrastructure`
+                }
               />
               <span className="case-card__tag">{open.category}</span>
             </div>

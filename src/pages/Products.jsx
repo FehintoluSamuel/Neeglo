@@ -123,7 +123,7 @@ export default function Products() {
   useEffect(() => {
     const root = pageRef.current;
     if (!root) return undefined;
-    const targets = root.querySelectorAll("[data-reveal]");
+    const targets = Array.from(root.querySelectorAll("[data-reveal]"));
     const showAll = () => {
       targets.forEach((target) => target.classList.add("is-visible"));
     };
@@ -141,8 +141,26 @@ export default function Products() {
       },
       { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
     );
-    targets.forEach((target) => observer.observe(target));
-    return () => observer.disconnect();
+    const seen = new WeakSet();
+    const register = () => {
+      targets.forEach((target) => {
+        if (target.classList.contains("is-visible")) return;
+        if (target.getBoundingClientRect().top < window.innerHeight) {
+          target.classList.add("is-visible");
+          observer.unobserve(target);
+          return;
+        }
+        if (seen.has(target)) return;
+        seen.add(target);
+        observer.observe(target);
+      });
+    };
+    register();
+    window.addEventListener("pageshow", register);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("pageshow", register);
+    };
   }, []);
 
   function goToSlide(index) {

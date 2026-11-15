@@ -156,38 +156,58 @@ function Counter({ value, suffix = "", label, size = "md" }) {
 
     let frame = 0;
     let started = false;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (reduce || !("IntersectionObserver" in window)) {
+    if (!("IntersectionObserver" in window)) {
       setDisplay(value);
       return undefined;
     }
 
+    const animate = () => {
+      if (started) return;
+      started = true;
+      const start = performance.now();
+      const duration = 1400;
+
+      const tick = (now) => {
+        const progress = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setDisplay(Math.round(value * eased));
+        if (progress < 1) frame = requestAnimationFrame(tick);
+      };
+
+      frame = requestAnimationFrame(tick);
+      observer.disconnect();
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting || started) return;
-        started = true;
-
-        const start = performance.now();
-        const duration = 1400;
-
-        const tick = (now) => {
-          const progress = Math.min(1, (now - start) / duration);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          setDisplay(Math.round(value * eased));
-          if (progress < 1) frame = requestAnimationFrame(tick);
-        };
-
-        frame = requestAnimationFrame(tick);
-        observer.disconnect();
+        if (!entry.isIntersecting) return;
+        animate();
       },
       { threshold: 0.4 }
     );
 
-    observer.observe(el);
+    const alreadyPast = () => {
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom <= 0 && !started) {
+        started = true;
+        setDisplay(value);
+        observer.disconnect();
+      }
+    };
+
+    if (el.getBoundingClientRect().top < window.innerHeight) {
+      animate();
+    } else {
+      observer.observe(el);
+      alreadyPast();
+    }
+
+    window.addEventListener("pageshow", alreadyPast);
     return () => {
       observer.disconnect();
       cancelAnimationFrame(frame);
+      window.removeEventListener("pageshow", alreadyPast);
     };
   }, [value]);
 
@@ -213,7 +233,7 @@ export default function Home() {
     const root = rootRef.current;
     if (!root) return undefined;
 
-    const targets = root.querySelectorAll("[data-reveal]");
+    const targets = Array.from(root.querySelectorAll("[data-reveal]"));
 
     if (!("IntersectionObserver" in window)) {
       targets.forEach((el) => el.classList.add("is-visible"));
@@ -231,8 +251,27 @@ export default function Home() {
       { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
     );
 
-    targets.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    const seen = new WeakSet();
+    const register = () => {
+      targets.forEach((el) => {
+        if (el.classList.contains("is-visible")) return;
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add("is-visible");
+          observer.unobserve(el);
+          return;
+        }
+        if (seen.has(el)) return;
+        seen.add(el);
+        observer.observe(el);
+      });
+    };
+
+    register();
+    window.addEventListener("pageshow", register);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("pageshow", register);
+    };
   }, []);
 
   useEffect(() => {

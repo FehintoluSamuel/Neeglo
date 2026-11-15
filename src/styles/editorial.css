@@ -28,8 +28,7 @@
   border-color: transparent;
 }
 
-/* -- Buttons & inputs: soft corners -------------------------- */
-.btn,
+/* -- Inputs: soft corners ----------------------------------- */
 .field input,
 .field textarea,
 .search-input,
@@ -120,9 +119,6 @@
   padding-block: 3.5rem;
 }
 
-.contact-form-col {
-  padding-block: clamp(3rem, 6vw, 5rem);
-}
 
 /* -- Card grids ----------------------------------------------- */
 .grid-tiles,
@@ -816,32 +812,10 @@
   padding: 1rem 0;
 }
 
-.company-img img,
-.contact-aside__img img {
+.company-img img {
   border: 0;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
-}
-
-/* -- Contact --------------------------------------------------- */
-.contact-aside__card {
-  background: var(--c-surface);
-  border: 0;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  padding: 1.5rem;
-}
-
-.channel {
-  border: 0;
-  background: transparent;
-  height: auto;
-  padding: 0.75rem 0;
-  border-top: 1px solid var(--c-line);
-}
-
-.channels {
-  gap: 0;
 }
 
 /* -- Side nav active state: soft chip --------------------------- */
@@ -1339,6 +1313,98 @@
 
 .page-team .team-sath__board-media img {
   object-position: center top;
+}
+
+.page-team .team-sath__org-row {
+  padding: 0.9rem 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0;
+  background: transparent;
+}
+
+/* -- Work page - Team-style hero and stage --------------------- */
+.page-work .work-hero__text {
+  max-width: 62ch;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: var(--lh-body);
+}
+
+.page-work .team-sath--work {
+  padding-block: clamp(2rem, 4vw, 3rem);
+  background: linear-gradient(180deg, rgba(8, 20, 32, 0.9) 0%, rgba(8, 20, 32, 0.86) 100%);
+}
+
+.page-work .work-stage__bar .filter-btn {
+  color: rgba(255, 255, 255, 0.62);
+  border-bottom-color: transparent;
+}
+
+.page-work .work-stage__bar .filter-btn:hover,
+.page-work .work-stage__bar .filter-btn:focus-visible {
+  color: #fff;
+}
+
+.page-work .work-stage__bar .filter-btn.is-active {
+  color: #fff;
+  border-bottom-color: var(--brand-to);
+}
+
+.page-work .team-sath--work::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/Works_images/Background_images/work-section-strategy.webp");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  filter: saturate(0.9);
+}
+
+.page-work .team-sath--work::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 20, 32, 0.9) 0%, rgba(8, 20, 32, 0.86) 100%);
+}
+
+.page-work .team-sath--work > .team-sath__container {
+  position: relative;
+  z-index: 1;
+  gap: 1.25rem;
+}
+
+.page-work .team-sath__container > .work-grid {
+  padding: 0;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.page-work .spec-table {
+  grid-template-columns: minmax(84px, auto) minmax(0, 1fr);
+  margin-top: 1.25rem;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.page-work .spec-table__key {
+  padding-inline: 0;
+  border-right: 0;
+  background: transparent;
+}
+
+.page-work .spec-table__val {
+  padding-inline: 0;
+}
+
+.page-work .case-card {
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 30px 70px -50px rgba(0, 0, 0, 0.9);
+}
+
+.page-work .case-card:hover {
+  border-color: rgba(21, 207, 241, 0.45);
 }
 
 .modal--case-wikeep {

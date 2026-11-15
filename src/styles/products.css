@@ -336,6 +336,12 @@
   background: rgba(8, 20, 32, 0.72);
 }
 
+/* The gallery is the card; the copy should not sit in a second card. */
+.products-page .products-video__content {
+  padding: 0;
+  background: transparent;
+}
+
 .products-gallery {
   position: relative;
   width: min(100%, 700px);
@@ -548,10 +554,8 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .products-hero__slide.is-active .products-hero__content > * {
-    animation: products-rise 900ms cubic-bezier(0.16, 0.8, 0.3, 1) both;
-  }
+.products-hero__slide.is-active .products-hero__content > * {
+  animation: products-rise 900ms cubic-bezier(0.16, 0.8, 0.3, 1) both;
 }
 
 @keyframes products-rise {
@@ -566,7 +570,21 @@
   }
 }
 
+@keyframes products-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .products-hero__slide.is-active .products-hero__content > * {
+    animation: products-fade 600ms ease both;
+  }
+
   .products-gallery__image {
     transition: none;
   }
