@@ -276,7 +276,6 @@ export default function Home() {
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) return undefined;
 
     const timer = window.setInterval(() => {
       if (document.hidden) return;
@@ -287,7 +286,7 @@ export default function Home() {
         if (track) {
           track.scrollTo({
             left: next * track.clientWidth,
-            behavior: "smooth",
+            behavior: reduce ? "auto" : "smooth",
           });
         }
         return next;

@@ -195,12 +195,7 @@
 .mh-slide__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(8, 20, 32, 0.82) 0%,
-    rgba(8, 20, 32, 0.55) 55%,
-    rgba(8, 20, 32, 0.35) 100%
-  );
+  background: rgba(8, 20, 32, 0.82);
 }
 
 .mh-slide--media .mh-slide__scrim {
@@ -396,7 +391,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(8, 20, 32, 0.38);
+  background: rgba(8, 20, 32, 0.82);
 }
 
 .mh-about__inner {
@@ -563,7 +558,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(8, 20, 32, 0.52);
+  background: rgba(8, 20, 32, 0.82);
 }
 
 .mh-feature > * {
@@ -655,7 +650,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(8, 20, 32, 0.52);
+  background: rgba(8, 20, 32, 0.82);
 }
 
 .mh-foundation > * {
@@ -1015,7 +1010,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(8, 20, 32, 0.44);
+  background: rgba(8, 20, 32, 0.82);
 }
 
 .mh-join > * {

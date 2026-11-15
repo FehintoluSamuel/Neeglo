@@ -48,9 +48,6 @@ function ProductGallery({ slides, label }) {
 
   useEffect(() => {
     if (slides.length < 2 || paused) return undefined;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return undefined;
-    }
     const timer = window.setInterval(() => {
       setIndex((current) => (current + 1) % slides.length);
     }, 3500);
@@ -102,9 +99,9 @@ export default function Products() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return undefined;
-    }
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
     const timer = window.setInterval(() => {
       if (document.hidden) return;
       const track = trackRef.current;
@@ -114,7 +111,7 @@ export default function Products() {
       setActiveSlide(next);
       track.scrollTo({
         left: next * track.clientWidth,
-        behavior: "smooth",
+        behavior: reduce ? "auto" : "smooth",
       });
     }, 6000);
     return () => window.clearInterval(timer);

@@ -784,7 +784,7 @@
 .team-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(8, 20, 32, 0.82) 0%, rgba(8, 20, 32, 0.55) 55%, rgba(8, 20, 32, 0.35) 100%);
+  background: rgba(8, 20, 32, 0.82);
 }
 
 .team-hero__inner {
@@ -1921,6 +1921,10 @@
   color: rgba(255, 255, 255, 0.88);
   font-size: clamp(1rem, 1.2vw, 1.15rem);
   line-height: var(--lh-body);
+}
+
+.page-contact .team-sath__eyebrow-text {
+  color: var(--c-blue-30);
 }
 
 .contact-grid {
