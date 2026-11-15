@@ -35,7 +35,7 @@ export default function Work() {
             <p className="team-hero__eyebrow">Work</p>
             <h1 className="team-hero__title">Selected builds</h1>
             <p className="work-hero__text">
-              A selection of projects the team has built independently. These are not Neeglo client engagements - they are founders' personal projects. Neeglo's focus now is TrendySize, our own product.
+              A selection of personal projects built by our founders - not Neeglo client engagements. Today, Neeglo is focused on TrendySize, our own product.
             </p>
           </div>
         </div>

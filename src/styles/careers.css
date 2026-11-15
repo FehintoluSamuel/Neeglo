@@ -1,0 +1,235 @@
+/* ============================================================
+   Neeglo - About and Careers
+   ============================================================ */
+
+/* -- About --------------------------------------------------- */
+.about-hero .team-hero__content {
+  max-width: 900px;
+}
+
+.about-intro {
+  background: var(--c-surface);
+}
+
+.about-intro__grid {
+  width: min(1180px, 100%);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.about-intro__head h2 {
+  margin-top: 0.75rem;
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  line-height: var(--lh-heading);
+  letter-spacing: -0.02em;
+}
+
+.about-intro__body {
+  display: grid;
+  gap: 1rem;
+  color: var(--c-muted);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.about-facts {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--c-line);
+  background: var(--c-surface);
+}
+
+.about-fact {
+  min-width: 0;
+  padding: 1rem;
+  border-left: 1px solid var(--c-line);
+}
+
+.about-fact:first-child {
+  border-left: 0;
+}
+
+.about-fact__label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.about-fact__value {
+  display: block;
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  color: var(--c-ink);
+  overflow-wrap: anywhere;
+}
+
+.about-cta {
+  background: var(--c-surface-alt);
+}
+
+/* -- Careers ------------------------------------------------- */
+.careers-academy::before {
+  background-image: url("../images/Careers/Academy/students_in_class.webp");
+}
+
+.team-sath__intro-text h3 {
+  color: #fff;
+}
+
+.careers-steps {
+  display: grid;
+  gap: 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.careers-steps h4 {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+}
+
+.careers-steps p {
+  margin-top: 0.35rem;
+  color: var(--c-muted);
+}
+
+.team-sath .careers-steps {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.team-sath .careers-steps h4 {
+  color: #fff;
+}
+
+.team-sath .careers-steps p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.careers-action {
+  display: flex;
+  align-self: flex-start;
+}
+
+.careers-empty {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  max-width: 620px;
+}
+
+.careers-empty p {
+  color: var(--c-muted);
+}
+
+.careers-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.careers-columns > div {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+}
+
+.careers-list {
+  display: grid;
+  gap: 0.5rem;
+  padding-left: 1.25rem;
+  color: var(--c-ink-soft);
+}
+
+.careers-roles {
+  display: grid;
+  list-style: none;
+  border-top: 1px solid var(--c-line);
+}
+
+.careers-roles li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.careers-roles p {
+  margin-top: 0.25rem;
+  color: var(--c-muted);
+}
+
+.careers-faq h3 {
+  margin-bottom: 0.25rem;
+}
+
+.careers-faq details {
+  border-top: 1px solid var(--c-line);
+}
+
+.careers-faq details:last-child {
+  border-bottom: 1px solid var(--c-line);
+}
+
+.careers-faq summary {
+  padding-block: 0.9rem;
+  cursor: pointer;
+  font-weight: var(--fw-semibold);
+}
+
+.careers-faq details p {
+  padding-bottom: 1rem;
+  color: var(--c-muted);
+}
+
+@media (max-width: 1023px) {
+  .about-intro__grid,
+  .careers-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .about-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-fact:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid var(--c-line);
+  }
+
+  .about-fact:nth-child(4) {
+    border-top: 1px solid var(--c-line);
+  }
+}
+
+@media (max-width: 639px) {
+  .about-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .about-fact,
+  .about-fact:nth-child(3),
+  .about-fact:nth-child(4) {
+    border-left: 0;
+    border-top: 1px solid var(--c-line);
+  }
+
+  .about-fact:first-child {
+    border-top: 0;
+  }
+
+  .careers-roles li {
+    flex-direction: column;
+  }
+}

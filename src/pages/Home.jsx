@@ -45,7 +45,7 @@ const heroSlides = [
     kicker: "Who we are",
     title: companyIntro.title,
     cta: "About Neeglo",
-    href: "/company",
+    href: "/about",
     image: heroTeam,
     layout: "left",
     tone: "dark",
@@ -421,7 +421,7 @@ export default function Home() {
               {companyIntro.title}
             </h2>
             <p className="mh-text">{companyIntro.paras[0]}</p>
-            <a className="mh-btn mh-btn--light" href="/company">
+            <a className="mh-btn mh-btn--light" href="/about">
               About Neeglo
             </a>
           </div>
@@ -595,7 +595,7 @@ export default function Home() {
             A clear path from the first conversation to day-one support, with
             you involved at every step.
           </p>
-          <a className="mh-btn mh-btn--light" href="/company#operating-model">
+          <a className="mh-btn mh-btn--light" href="/about#operating-model">
             See how we work
           </a>
         </div>
@@ -691,7 +691,7 @@ export default function Home() {
           <p className="mh-text">
             What we are testing, learning and building - written down as we go.
           </p>
-          <a className="mh-btn mh-btn--light" href="/company#field-notes">
+          <a className="mh-btn mh-btn--light" href="/about#field-notes">
             Browse field notes
           </a>
         </div>
@@ -709,7 +709,7 @@ export default function Home() {
               <p className="mh-post__meta">{p.meta}</p>
               <h3 className="mh-post__title">{p.title}</h3>
               <p className="mh-text">{p.excerpt}</p>
-              <a className="mh-link" href="/company#field-notes">
+              <a className="mh-link" href="/about#field-notes">
                 Browse field notes
               </a>
             </article>
@@ -729,8 +729,8 @@ export default function Home() {
           <p className="mh-text">
             We look for people who want to build technology that lasts.
           </p>
-          <a className="mh-btn mh-btn--light" href="/team">
-            Meet the team
+          <a className="mh-btn mh-btn--light" href="/careers">
+            Explore careers
           </a>
         </div>
         <div className="mh-join__stats" data-reveal>

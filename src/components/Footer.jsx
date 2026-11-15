@@ -16,14 +16,14 @@ const columns = [
     links: [
       { label: "Co-founders", href: "/team" },
       { label: "Work & builds", href: "/work" },
-      { label: "About us", href: "/company" },
+      { label: "Academy", href: "/careers#academy" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About", href: "/company" },
-      { label: "Field notes", href: "/company" },
+      { label: "About", href: "/about" },
+      { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -61,7 +61,7 @@ export default function Footer() {
         <div className="footer-about">
           <div className="footer-col__title">{brand.name}</div>
           <p className="footer-about__text">
-            Neeglo is an independent software company building TrendySize -
+            Neeglo is a software company building TrendySize -
             digital measurement for fashion businesses. Founded {brand.founded}.
           </p>
           <div className="footer-social">

@@ -10,30 +10,31 @@ export const brand = {
   name: "Neeglo",
   legalName: "Neeglo", // registration details still to add
   tagline: "Build for the long run.",
-  descriptor: "An independent software company",
+  descriptor: "A software company",
   founded: 2026,
   companyNumber: "",
   address: {
-    line1: "An independent software company",
+    line1: "Software company",
     line2: "Lagos · Abakaliki · Enugu, Nigeria",
     country: "Nigeria",
   },
   email: "hello@neeglo.com",
   emailGeneral: "hello@neeglo.com",
+  emailCareers: "careers@neeglo.com",
   responseTime: "within 48 hours",
 };
 
 export const companyIntro = {
-  title: "The Tech Team behind Neeglo",
+  title: "The company behind the work",
   paras: [
-    "Neeglo is an independent tech team that builds practical technology for real problems. We are engineers, designers, and product builders across Lagos, Abakaliki and Enugu, Nigeria, working together to turn ideas into reliable, usable products.",
+    "Neeglo is a technology company building practical solutions to real problems. Our engineers, designers and product builders work across Lagos, Abakaliki and Enugu, Nigeria, turning ideas into reliable, useful products.",
     "We build tech products across fashion tech, edtech, fintech, teletech and more. Beyond our own products, we offer tech consultancy, help clients develop their ideas into projects - from market research and analysis to design, engineering, deployment, and maintenance - and we also teach tech to help people grow and build confidently.",
     "Our first product, TrendySize, takes the guesswork out of fashion measurement. It reaches its first pilot vendors in October 2026.",
   ],
 };
 
 export const teamOrg = [
-  { k: "Company", v: "Independent · founded 2026" },
+  { k: "Company", v: "Software company · founded 2026" },
   { k: "Team", v: "Six co-founders · three disciplines" },
   { k: "Based", v: "Lagos · Abakaliki · Enugu" },
   { k: "First product", v: "TrendySize · pilot late Oct 2026" },
@@ -51,7 +52,8 @@ export const nav = [
   { id: "products", label: "Products", href: "/products" },
   { id: "team", label: "Team", href: "/team" },
   { id: "work", label: "Work", href: "/work" },
-  { id: "company", label: "Company", href: "/company" },
+  { id: "about", label: "About", href: "/about" },
+  { id: "careers", label: "Careers", href: "/careers" },
   { id: "contact", label: "Contact", href: "/contact" },
 ];
 
@@ -365,7 +367,7 @@ export const caseStudies = [
     id: 2,
     title: "Northbound Sessions",
     category: "Platforms",
-    client: "Independent build",
+    client: "Personal project",
     region: "Azure Container Apps",
     year: "2026",
     duration: "6 weeks",
@@ -383,7 +385,7 @@ export const caseStudies = [
     id: 3,
     title: "TradeIQ",
     category: "AI & Analytics",
-    client: "Independent build",
+    client: "Personal project",
     region: "NGX market data",
     year: "2026",
     duration: "5 weeks",
@@ -402,7 +404,7 @@ export const caseStudies = [
     id: 4,
     title: "CorperNest",
     category: "Platforms",
-    client: "Independent build",
+    client: "Personal project",
     region: "Web · Nigeria",
     year: "2026",
     duration: "5 weeks",
@@ -638,7 +640,7 @@ export const process = [
 ];
 
 export const operatingModel = [
-  { k: "Origin", v: "Independent company, founded 2026" },
+  { k: "Origin", v: "Founded by six co-founders in 2026" },
   { k: "Distribution", v: "Remote-first · Lagos, Abakaliki, Enugu, Nigeria" },
   { k: "Launch", v: "TrendySize pilot · late October 2026" },
   { k: "Documented culture", v: "Product docs, API briefs and runbooks before code" },
@@ -648,7 +650,7 @@ export const timeline = [
   {
     year: "Apr 2026",
     title: "We begin",
-    text: "Six founders come together as Neeglo - an independent company - to build products of our own.",
+    text: "Six founders come together as Neeglo to build products of their own.",
   },
   {
     year: "May–Jun 2026",

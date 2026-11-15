@@ -8,7 +8,8 @@ import Home from "./pages/Home.jsx";
 import Products from "./pages/Products.jsx";
 import Team from "./pages/Team.jsx";
 import Work from "./pages/Work.jsx";
-import Company from "./pages/Company.jsx";
+import About from "./pages/About.jsx";
+import Careers from "./pages/Careers.jsx";
 import Contact from "./pages/Contact.jsx";
 import Status from "./pages/Status.jsx";
 import Privacy from "./pages/Privacy.jsx";
@@ -20,7 +21,8 @@ const routes = {
   products: Products,
   team: Team,
   work: Work,
-  company: Company,
+  about: About,
+  careers: Careers,
   contact: Contact,
   status: Status,
   privacy: Privacy,
