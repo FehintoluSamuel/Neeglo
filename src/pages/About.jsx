@@ -7,7 +7,7 @@ import {
   principles,
   timeline,
 } from "../data/content.js";
-import aboutImage from "../images/Works_images/Background_images/work-hero-engineering.webp";
+import aboutImage from "../images/Solutions_images/optimized/bg-ai-project.webp";
 
 export default function About() {
   return (

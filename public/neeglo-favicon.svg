@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="mark" gradientTransform="rotate(25)" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D7CE9"/>
+      <stop offset="100%" stop-color="#15CFF1"/>
+    </linearGradient>
+  </defs>
+  <svg x="4" y="4" width="56" height="56" viewBox="34 115 64 70" preserveAspectRatio="xMidYMid meet">
+    <path fill="url(#mark)" transform="matrix(1.9921454191207886 0 0 1.9921454191207886 34.36222856892533 118.12567302861737)" d="m2.83 18.247 26.34-9.124L2.83 0zM29.17 32V13.753L2.83 22.877z"/>
+  </svg>
+</svg>

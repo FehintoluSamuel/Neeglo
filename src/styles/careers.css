@@ -78,8 +78,40 @@
 }
 
 /* -- Careers ------------------------------------------------- */
+.about-hero,
+.careers-hero {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.about-hero .team-hero__media img,
+.careers-hero .team-hero__media img {
+  object-position: center 40%;
+}
+
 .careers-academy::before {
-  background-image: url("../images/Careers/Academy/students_in_class.webp");
+  background-image: none;
+}
+
+.careers-academy__media,
+.careers-academy__classroom {
+  width: 100%;
+  margin: 0;
+}
+
+.careers-academy__media {
+  max-width: 860px;
+}
+
+.careers-academy__classroom {
+  max-width: 680px;
+}
+
+.careers-academy__media img,
+.careers-academy__classroom img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .team-sath__intro-text h3 {

@@ -8,7 +8,9 @@ import {
   hiringProcess,
   openRoles,
 } from "../data/careers.js";
-import careersImage from "../images/Works_images/Background_images/software-engineer-coding-laptop-focusing-deep-learning.webp";
+import careersImage from "../images/Solutions_images/optimized/bg-collaboration.webp";
+import academyImage from "../images/Careers/Academy/School_of_SoftwareEngineering.webp";
+import academyStudentsImage from "../images/Careers/Academy/students_in_class.webp";
 
 export default function Careers() {
   const generalMailto = careersMailto(generalApplication.subject);
@@ -16,7 +18,7 @@ export default function Careers() {
 
   return (
     <>
-      <section className="team-hero">
+      <section className="team-hero careers-hero">
         <div className="team-hero__media">
           <img src={careersImage} alt="" aria-hidden="true" />
         </div>
@@ -42,6 +44,13 @@ export default function Careers() {
             </p>
           </div>
 
+          <figure className="careers-academy__media" data-reveal>
+            <img
+              src={academyImage}
+              alt="Neeglo Academy - School of Software Engineering"
+            />
+          </figure>
+
           <div className="team-sath__intro-text" data-reveal>
             <h3>How the programme works</h3>
             <ol className="careers-steps">
@@ -52,6 +61,14 @@ export default function Careers() {
                 </li>
               ))}
             </ol>
+          </div>
+
+          <div className="careers-academy__classroom" data-reveal>
+            <img
+              src={academyStudentsImage}
+              alt="University students sitting in a classroom"
+              loading="lazy"
+            />
           </div>
 
           <div className="team-sath__meta-grid" data-reveal>

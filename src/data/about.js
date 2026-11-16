@@ -1,6 +1,6 @@
 export const aboutHero = {
   eyebrow: "About Neeglo",
-  title: "We build software that holds up.",
+  title: "We build software that works.",
   subtitle:
     "A software company building products, client solutions and technical skills.",
 };
